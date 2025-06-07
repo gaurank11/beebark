@@ -1,0 +1,157 @@
+.circle-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: #000;
+  transition: all 0.5s ease;
+}
+
+.menu-open {
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+}
+
+.menu-closed {
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+}
+
+/* Menu animation */
+.menu-animation-open {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* General reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent body scrolling */
+}
+
+.section {
+  height: 100vh; /* Full viewport height */
+  scroll-snap-align: start; /* Snaps the section into view */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  scroll-snap-type: y mandatory; /* Enable snapping behavior */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+}
+
+
+/* Custom Cursor Styles */
+html, body {
+  cursor: none; /* Hide the default cursor */
+}
+
+/* Base cursor style */
+.cursor {
+  position: absolute;
+  pointer-events: none; /* Prevent blocking interactions */
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* Light white with transparency */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  z-index: 9999; /* Ensure it appears on top of other elements */
+}
+
+/* Hover effects on links and buttons */
+a:hover .cursor, button:hover .cursor {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 255, 255, 0.8); /* Cyan color on hover */
+}
+
+/* Hover effect on any other interactive element (e.g., divs, sections, etc.) */
+.interactive:hover .cursor {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 0, 0, 0.8); /* Red color on hover */
+}
+
+.interactive:hover .cursor {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 165, 0, 0.8); /* Orange color */
+}
+
+/* Container styling */
+.service-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+/* Service Card */
+.service-slide {
+  display: flex;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.service-slide.active {
+  opacity: 1;
+}
+
+/* Logo and Text */
+.service-logo img {
+  object-fit: contain;
+}
+
+.service-text {
+  flex: 1;
+}
+
+.service-text h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Underline animation */
+.underline-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.service-slide.active .underline-animation {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Service Text Hover Underline */
+.service-text:hover .underline-animation {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
