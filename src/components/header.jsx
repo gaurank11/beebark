@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { XMarkIcon, Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
-import { LogIn, UserPlus,Instagram, Twitter, Facebook } from "lucide-react";
+import { LogIn, UserPlus, Instagram, Twitter, Facebook } from "lucide-react";
+import { Link, useNavigate, NavLink } from "react-router-dom"; // Ensure these are correctly imported from react-router-dom
 import { motion } from "framer-motion";
-import { Link, useNavigate, NavLink } from "react-router-dom";
-import logo from "../assets/bbark.png";
 
-
-export default function App() {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(
     Boolean(localStorage.getItem("userToken"))
@@ -25,101 +23,122 @@ export default function App() {
     navigate("/login");
   };
 
+  // Close profile menu if mobile menu is opened
+  useEffect(() => {
+    if (menuOpen) {
+      setProfileMenuOpen(false);
+    }
+  }, [menuOpen]);
+
+  // Close mobile menu if screen size becomes large
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) { // Tailwind's 'md' breakpoint is 768px
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Function to get classes for NavLink based on active state
+  const getNavLinkClasses = (isActive) =>
+    `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 ${
+      isActive ? "border-b-2 border-yellow-500" : ""
+    }`;
+
   return (
     <>
       {/* Header Section */}
-     <header className="fixed top-0 left-0 w-full p-5 flex justify-between items-center z-50 bg-white shadow-md">
+      <header className="fixed top-0 left-0 w-full p-5 flex justify-between items-center z-50 bg-white shadow-md rounded-b-lg">
         <div className="flex items-center space-x-3">
           <Link to="/" onClick={() => setMenuOpen(false)} className="flex items-center">
-            <img src={logo} alt="BeeBark Logo" className="h-12 w-auto" />
-            <span className="text-2xl font-bold text-black">BeeBark</span>
+            {/* Using a placeholder image URL for the logo */}
+            <img src="/bbark.png" alt="BeeBark Logo" className="h-12 w-auto rounded-full" />
+            <span className="text-2xl font-bold text-black ml-2">BeeBark</span>
           </Link>
         </div>
 
         {/* Right-side Icons and Menu */}
         <div className="flex items-center space-x-5">
-            <div className="hidden md:flex items-center space-x-10">
-      {/* Home */}
-      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
-        <NavLink
-          to="/"
-          className={({ isActive }) => 
-            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
-            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
-          }
-        >
-          Home
-        </NavLink>
-      </div>
+          {/* Desktop Navigation Links (visible on medium and larger screens) */}
+          <nav className="hidden md:flex items-center space-x-10 font-poppins text-lg font-semibold">
+            <div className="flex items-center text-black font-bold space-x-2 cursor-pointer">
+              <NavLink to="/" className={({ isActive }) => getNavLinkClasses(isActive)}>
+                Home
+              </NavLink>
+            </div>
+            <div className="flex items-center text-black font-bold space-x-2 cursor-pointer">
+              <NavLink to="/services" className={({ isActive }) => getNavLinkClasses(isActive)}>
+                Services
+              </NavLink>
+            </div>
+            <div className="flex items-center text-black font-bold space-x-2 cursor-pointer">
+              <NavLink to="/work" className={({ isActive }) => getNavLinkClasses(isActive)}>
+                Work
+              </NavLink>
+            </div>
+            <div className="flex items-center text-black font-bold space-x-2 cursor-pointer">
+              <NavLink to="/testimonials" className={({ isActive }) => getNavLinkClasses(isActive)}>
+                Testimonials
+              </NavLink>
+            </div>
+            <div className="flex items-center text-black font-bold space-x-2 cursor-pointer">
+              <NavLink to="/about" className={({ isActive }) => getNavLinkClasses(isActive)}>
+                About
+              </NavLink>
+            </div>
+            <div className="flex items-center text-black font-bold space-x-2 cursor-pointer">
+              <NavLink to="/contact" className={({ isActive }) => getNavLinkClasses(isActive)}>
+                Contact
+              </NavLink>
+            </div>
+          </nav>
 
-      {/* Services */}
-      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
-        <NavLink
-          to="/services" 
-          className={({ isActive }) => 
-            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
-            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
-          }
-        >
-          Services
-        </NavLink>
-      </div>
+          {isLoggedIn && (
+            <div className="hidden md:flex items-center space-x-4 relative">
+              {/* Notification Bell Icon */}
+              <BellIcon className="w-6 h-6 text-black cursor-pointer hover:text-gray-700 transition duration-300 ease-in-out" />
 
-      {/* Work */}
-      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
-        <NavLink
-          to="/work" 
-          className={({ isActive }) => 
-            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
-            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
-          }
-        >
-          Work
-        </NavLink>
-      </div>
+              {/* Profile Avatar */}
+              <div
+                className="relative cursor-pointer"
+                onClick={toggleProfileMenu}
+              >
+                {/* Placeholder for profile image */}
+                <img
+                  src="https://placehold.co/40x40/CCCCCC/000000?text=P"
+                  alt="Profile Avatar"
+                  className="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-green-500 transition duration-300 ease-in-out"
+                />
+                {profileMenuOpen && (
+                  <motion.div
+                    className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <ul className="py-2">
+                      <li
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-gray-800 font-medium"
+                        onClick={() => { navigate("/profile"); setProfileMenuOpen(false); }}
+                      >
+                        Profile
+                      </li>
+                      <li
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-red-600 font-medium"
+                        onClick={handleLogout}
+                      >
+                        Logout
+                      </li>
+                    </ul>
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          )}
 
-      {/* Testimonials */}
-      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
-        <NavLink
-          to="/testimonials" 
-          className={({ isActive }) => 
-            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
-            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
-          }
-        >
-          Testimonials
-        </NavLink>
-      </div>
-
-      {/* About */}
-      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
-        <NavLink
-          to="/about" 
-          className={({ isActive }) => 
-            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
-            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
-          }
-        >
-          About
-        </NavLink>
-      </div>
-
-      {/* Contact */}
-      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
-        <NavLink
-          to="/contact" 
-          className={({ isActive }) => 
-            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
-            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
-          }
-        >
-          Contact
-        </NavLink>
-      </div>
-    </div>
-    
-
-          {/* Menu Icon */}
+          {/* Mobile Menu Icon (visible on small screens only) */}
           <div
             className="md:hidden flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-black bg-black"
             onClick={toggleMenu}
@@ -133,146 +152,81 @@ export default function App() {
         </div>
       </header>
 
-       {/* Fixed Full-Screen Menu */}
-       <motion.div
-        className={`fixed top-0 left-0 w-full h-full bg-white text-black p-6 z-40 ${
+      {/* Fixed Full-Screen Mobile Menu (hidden on medium and larger screens) */}
+      <motion.div
+        className={`fixed top-0 left-0 w-full h-full bg-white text-black p-6 z-40 md:hidden ${
           menuOpen ? "transform translate-x-0" : "transform -translate-x-full"
         }`}
         initial={{ x: "-100%" }}
         animate={{ x: menuOpen ? "0%" : "-100%" }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <div className="flex flex-row h-full">
+        {/* Corrected missing div tags */}
+        <div className="flex flex-col h-full">
           {/* Menu Items */}
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left flex-1">
-            <div className="flex flex-col justify-center items-start h-full md:mx-10">
-              <ul className="space-y-7 text-xl md:text-5xl font-bold font-montserrat text-left md:mx-12">
-                <li>
-                  <Link
-                    to="/"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-700"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-700"
-                  >
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#client"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-700"
-                  >
-                    Client
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#aboutus"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-700"
-                  >
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-700"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/pro"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-700"
-                  >
-                    For Pro's
-                  </Link>
-                </li>
-
-                {/* Mobile Only: Sign In and Join as a Pro */}
-                <li className="md:hidden mt-8 border-t pt-4">
-                  <div className="flex flex-col items-start space-y-4">
-                    <div className="flex items-center space-x-2 font-poppins">
-                      <LogIn className="w-5 h-5" />
-                      <span>
-                        <Link
-                          to="/login"
-                          onClick={() => setMenuOpen(false)}
-                          className="hover:text-gray-700"
-                        >
-                          Login
-                        </Link>
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2 font-poppins">
-                      <UserPlus className="w-5 h-5" />
-                      <span>
-                        <Link
-                          to="/join"
-                          onClick={() => setMenuOpen(false)}
-                          className="hover:text-gray-700"
-                        >
-                          Join as a Pro
-                        </Link>
-                      </span>
-                    </div>
-                    <div className="md:hidden text-sm underline text-green-700 mt-5 font-poppins">
-                      info@thebeebark.com
-                    </div>
-                    <div className="md:hidden text-sm underline text-green-700 font-poppins">
-                      +91 7701858312
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <div className="flex-1 flex flex-col justify-center items-start">
+            <ul className="space-y-7 text-3xl font-bold font-montserrat text-left px-4">
+              <li>
+                <Link
+                  to="/"
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-gray-700"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                {/* Changed to Link and proper path */}
+                <Link
+                  to="/services"
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-gray-700"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                {/* Changed to Link and proper path */}
+                <Link
+                  to="/work"
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-gray-700"
+                >
+                  Work
+                </Link>
+              </li>
+              <li>
+                {/* Changed to Link and proper path */}
+                <Link
+                  to="/testimonials"
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-gray-700"
+                >
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                {/* Changed to Link and proper path */}
+                <Link
+                  to="/about"
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-gray-700"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-gray-700"
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          {/* Contact Info and Social Media Icons */}
-          <div className="hidden md:flex flex-col items-start space-y-5 justify-center mx-12 mt-10">
-            <div className="text-xl underline font-bold text-green-700 font-poppins">
-              info@thebeebark.com
-            </div>
-            <div className="text-xl underline font-bold text-green-700 font-poppins">
-              +91 7701858312
-            </div>
-            <div className="flex space-x-4 mt-4">
-              <a
-                href="https://www.facebook.com/profile.php?id=61560873622756"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Facebook className="w-6 h-6 text-black hover:text-gray-700" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter className="w-6 h-6 text-black hover:text-gray-700" />
-              </a>
-              <a
-                href="https://www.instagram.com/thebeebark/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Instagram className="w-6 h-6 text-black hover:text-gray-700" />
-              </a>
-            </div>
-          </div>
         </div>
       </motion.div>
     </>
