@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact1 = () => {
   return (
-    <div className="min-h-screen bg-white text-yellow flex flex-col lg:flex-row items-center justify-center p-4 font-inter">
+    <div className="min-h-screen bg-white text-yellow flex flex-col lg:flex-row items-center justify-center p-4 font-inter ">
       {/* Left Section: Image and "Say hello" */}
       {/* On large screens, this section will take 60% of the width */}
       <div className="w-full lg:w-3/5 flex flex-col justify-center items-center lg:items-start p-8">
@@ -10,9 +10,9 @@ const Contact1 = () => {
         <div className="relative w-full max-w-lg lg:max-w-none h-64 lg:h-[400px] rounded-lg overflow-hidden shadow-lg">
           {/* Placeholder image - replace with your actual image */}
           <img
-            src="https://placehold.co/800x600/221912/FFD700?text=Your+Image+Here"
+            src="/contact_image.png"
             alt="Two men smiling"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-fit"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = 'https://placehold.co/800x600/221912/FFD700?text=Image+Not+Found';
