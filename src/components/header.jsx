@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { XMarkIcon, Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
 import { LogIn, UserPlus,Instagram, Twitter, Facebook } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/bbark.png"; // Remove curly braces
+import { Link, useNavigate, NavLink } from "react-router-dom";
+import logo from "../assets/bbark.png";
 
 
 export default function App() {
@@ -38,78 +38,90 @@ export default function App() {
 
         {/* Right-side Icons and Menu */}
         <div className="flex items-center space-x-5">
-          {isLoggedIn ? (
-            <div className="flex items-center space-x-4 relative">
-              {/* Notification Bell Icon */}
-              <BellIcon className="w-6 h-6 text-black cursor-pointer" />
+            <div className="hidden md:flex items-center space-x-10">
+      {/* Home */}
+      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
+        <NavLink
+          to="/"
+          className={({ isActive }) => 
+            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
+            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
+          }
+        >
+          Home
+        </NavLink>
+      </div>
 
-              {/* Profile Avatar */}
-              <div
-                className="relative cursor-pointer"
-                onClick={toggleProfileMenu}
-              >
-                <img
-                  src="/profile_icon.png" // Replace with user profile image if available
-                  alt="Profile Avatar"
-                  className="w-10 h-10 rounded-full border-2 border-gray-300"
-                />
-                {profileMenuOpen && (
-                  <motion.div
-                    className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ul className="py-2">
-                      <li
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                        onClick={() => navigate("/profile")}
-                      >
-                        Profile
-                      </li>
-                      <li
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-red-600"
-                        onClick={handleLogout}
-                      >
-                        Logout
-                      </li>
-                    </ul>
-                  </motion.div>
-                )}
-              </div>
-            </div>
-          ) : (
-            <div className="hidden md:flex items-center space-x-5">
-              <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
-                <LogIn className="w-5 h-5" />
-                <span>
-                  <Link
-                    to="/login"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-700"
-                  >
-                    Login
-                  </Link>
-                </span>
-              </div>
-              <div className="flex items-center text-black font-bold space-x-2 cursor-pointer md:border-2 md:border-black md:px-4 md:py-2 md:rounded-lg font-poppins">
-                <UserPlus className="w-5 h-5" />
-                <span>
-                  <Link
-                    to="/join"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-700"
-                  >
-                    Join as a Pro
-                  </Link>
-                </span>
-              </div>
-            </div>
-          )}
+      {/* Services */}
+      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
+        <NavLink
+          to="/services" 
+          className={({ isActive }) => 
+            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
+            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
+          }
+        >
+          Services
+        </NavLink>
+      </div>
+
+      {/* Work */}
+      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
+        <NavLink
+          to="/work" 
+          className={({ isActive }) => 
+            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
+            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
+          }
+        >
+          Work
+        </NavLink>
+      </div>
+
+      {/* Testimonials */}
+      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
+        <NavLink
+          to="/testimonials" 
+          className={({ isActive }) => 
+            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
+            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
+          }
+        >
+          Testimonials
+        </NavLink>
+      </div>
+
+      {/* About */}
+      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
+        <NavLink
+          to="/about" 
+          className={({ isActive }) => 
+            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
+            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
+          }
+        >
+          About
+        </NavLink>
+      </div>
+
+      {/* Contact */}
+      <div className="flex items-center text-black font-bold space-x-2 cursor-pointer font-poppins">
+        <NavLink
+          to="/contact" 
+          className={({ isActive }) => 
+            `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 
+            ${isActive ? 'border-b-2 border-yellow-500' : ''}`
+          }
+        >
+          Contact
+        </NavLink>
+      </div>
+    </div>
+    
 
           {/* Menu Icon */}
           <div
-            className="flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-black bg-black"
+            className="md:hidden flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-black bg-black"
             onClick={toggleMenu}
           >
             {menuOpen ? (

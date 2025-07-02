@@ -1,78 +1,70 @@
-import React, { useRef, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import video from "../assets/video.webm";
+import React, { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
+
+// Mock Link and useNavigate for self-contained example
+// In a real React app, these would be imported from 'react-router-dom'
+
 
 export default function HeroSection() {
-  const [isInView, setIsInView] = useState(false);
-  const videoRef = useRef(null);
-  const navigate = useNavigate();
+  const [underlineVisible, setUnderlineVisible] = useState(false);
+
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          if (videoRef.current) {
-            videoRef.current.muted = false; // Ensure unmuted
-            videoRef.current.play().catch((err) => {
-              console.warn("Autoplay with sound might be blocked by browser:", err);
-            });
-          }
-        } else {
-          setIsInView(false);
-          if (videoRef.current) {
-            videoRef.current.pause();
-          }
-        }
-      },
-      { threshold: 0.5 }
-    );
+    // Set a timeout to make the underline visible after 2 seconds
+    const timer = setTimeout(() => {
+      setUnderlineVisible(true);
+    }, 2000); // 2000 milliseconds = 2 seconds
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
+    // Cleanup the timer if the component unmounts
+    return () => clearTimeout(timer);
+  }, []); // Empty dependency array means this effect runs once after initial render
 
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
-    };
-  }, []);
-
-  const handleLearnMore = () => {
-    navigate("/other-page");
-  };
-
+  
   return (
-    <div
-      className="relative w-full h-screen overflow-hidden"
-      style={{ fontFamily: "Gotham SSm B, Gotham SSm A, Helvetica, Roboto, Arial, sans-serif" }}
-    >
-      {/* Video Background */}
-      <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
-        muted={false}
-        loop
-        playsInline
-      >
-        <source src={video} type="video/webm" />
-        Your browser does not support the video tag.
-      </video>
+    <section className="flex pt-10 mt-12 h-[60vh] md:h-[80vh]  bg-gray-50 p-6">
+      <div className="text-left max-w-6xl mx-4 mt-10 md:mx-10">
+        {/* Main Heading */}
+        <h1 className="text-5xl md:text-8xl font-serif font-bold text-gray-900 leading-tight mb-8">
+          Be the{" "}
+          <span className="relative inline-block">
+            brand
+            <span
+              className={`absolute bottom-0 left-0 w-full h-1 bg-yellow-500 transition-all duration-500 ease-out transform ${
+                underlineVisible ? "scale-x-100" : "scale-x-0"
+              }`}
+            ></span>
+          </span>{" "}
+          that customers want and competitors envy.
+        </h1>
 
-      {/* Bottom-Left Text and Button */}
-      <div className="absolute bottom-16 left-8 p-6 rounded-xl max-w-md">
-        <div className="text-lg md:text-[32px] text-white font-semibold mb-4 leading-relaxed">
-          The future belongs to those who believe in the beauty of their dreams.
-        </div>
-        <button
-          className="px-6 py-3 border-2 border-yellow-400 text-white text-sm md:text-xl font-semibold rounded-lg shadow-lg hover:bg-yellow-400 hover:text-white transition-all md:px-12"
-          onClick={handleLearnMore}
+        {/* Sub-text */}
+        <p className="text-lg md:text-xl text-gray-700 font-sans mb-10">
+          BeeBark is a global B2B brand agency.
+        </p>
+
+        {/* Learn More Link */}
+        <Link
+          to="/services"
+          className="inline-flex items-center text-[#221912] hover:text-yellow-400 font-semibold text-lg transition duration-300 ease-in-out group"
         >
-          Learn More
-        </button>
+          <span className="mr-2">LEARN ABOUT OUR BRAND PROCESS</span>
+          {/* Arrow Icon (SVG) */}
+          <svg
+            className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            ></path>
+          </svg>
+        </Link>
       </div>
-    </div>
+    </section>
   );
 }

@@ -13,11 +13,10 @@ const Home = () => {
   return (
     <div className="bg-white text-gray-800">
       <HeroSection />
-      <Hero1 />
       <AboutUs />
      <AutoScrollPortfolio/>
       <Categories />
-       <Services />
+       {/* <Services /> */}
   
     
       </div>
