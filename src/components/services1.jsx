@@ -67,10 +67,10 @@ const websiteServices = [
 // Main App component for the Services Page
 const Service1 = () => {
   return (
-    <div className="min-h-screen bg-yellow-300 font-sans text-gray-800">
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
       {/* Header Section - Mimicking image_d0522d.png */}
-      <header className="container mx-auto py-16 mt-12 px-4 text-center">
-        <h1 className="text-5xl md:text-6xl font-serif font-bold leading-tight mb-6 text-gray-900">
+      <header className="container mx-auto py-16 mt-12 px-4 text-center ">
+        <h1 className="px-10 text-5xl md:text-6xl font-serif font-bold leading-tight mb-6 text-gray-900">
           Our job: solving your business challenges. Let's fix yours.
         </h1>
         {/* <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
@@ -86,22 +86,22 @@ const Service1 = () => {
         </h2>
 
         {/* Container for all service categories, with the light background */}
-        <div className="bg-[#221912] p-8 md:p-12 rounded-lg shadow-md">
+        <div className="bg-yellow-300 p-8 md:p-12 rounded-lg shadow-md">
           {/* Branding Services Section */}
           <div className="mb-10">
             <div className="flex items-center mb-6">
               {/* Icon for Branding Services (Feather-like SVG) */}
-              <svg className="w-8 h-8 mr-3 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-8 h-8 mr-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
               </svg>
-              <h3 className="text-2xl font-semibold text-yellow-300">BRANDING SERVICES</h3>
+              <h3 className="text-2xl font-semibold text-black">BRANDING SERVICES</h3>
             </div>
             {/* Grid for Branding Service sub-categories */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
               {brandingServices.map((category, index) => (
                 <div key={index}>
-                  <h4 className="font-semibold text-stone-100 mb-2">{category.title}</h4>
-                  <ul className="list-disc list-inside text-gray-400 space-y-1">
+                  <h4 className="font-semibold text-gray-800 mb-2">{category.title}</h4>
+                  <ul className="list-disc list-inside text-gray-900 space-y-1">
                     {category.items.map((item, itemIndex) => (
                       <li key={itemIndex}>{item}</li>
                     ))}
@@ -115,17 +115,17 @@ const Service1 = () => {
           <div>
             <div className="flex items-center mb-6">
               {/* Icon for Website Services (Monitor-like SVG) */}
-              <svg className="w-8 h-8 mr-3 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-8 h-8 mr-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-1.25-3M15 10V5a2 2 0 00-2-2H7a2 2 0 00-2 2v5m10 0h4a2 2 0 012 2v5a2 2 0 01-2 2h-4m0 0v-2m0 2v2m0 2a2 2 0 01-2 2H7a2 2 0 01-2-2v-2"></path>
               </svg>
-              <h3 className="text-2xl font-semibold text-yellow-300">WEBSITE DESIGN/DEVELOPMENT SERVICES</h3>
+              <h3 className="text-2xl font-semibold text-black">WEBSITE DESIGN/DEVELOPMENT SERVICES</h3>
             </div>
             {/* Grid for Website Service sub-categories */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
               {websiteServices.map((category, index) => (
                 <div key={index}>
-                  <h4 className="font-semibold text-stone-100 mb-2">{category.title}</h4>
-                  <ul className="list-disc list-inside text-gray-400 space-y-1">
+                  <h4 className="font-semibold text-gray-800 mb-2">{category.title}</h4>
+                  <ul className="list-disc list-inside text-gray-900 space-y-1">
                     {category.items.map((item, itemIndex) => (
                       <li key={itemIndex}>{item}</li>
                     ))}

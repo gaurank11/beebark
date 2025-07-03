@@ -78,11 +78,11 @@ export default function Header() {
                 Work
               </NavLink>
             </div>
-            <div className="flex items-center text-black font-bold space-x-2 cursor-pointer">
+            {/* <div className="flex items-center text-black font-bold space-x-2 cursor-pointer">
               <NavLink to="/testimonials" className={({ isActive }) => getNavLinkClasses(isActive)}>
                 Testimonials
               </NavLink>
-            </div>
+            </div> */}
             <div className="flex items-center text-black font-bold space-x-2 cursor-pointer">
               <NavLink to="/about" className={({ isActive }) => getNavLinkClasses(isActive)}>
                 About
@@ -95,48 +95,7 @@ export default function Header() {
             </div>
           </nav>
 
-          {isLoggedIn && (
-            <div className="hidden md:flex items-center space-x-4 relative">
-              {/* Notification Bell Icon */}
-              <BellIcon className="w-6 h-6 text-black cursor-pointer hover:text-gray-700 transition duration-300 ease-in-out" />
 
-              {/* Profile Avatar */}
-              <div
-                className="relative cursor-pointer"
-                onClick={toggleProfileMenu}
-              >
-                {/* Placeholder for profile image */}
-                <img
-                  src="https://placehold.co/40x40/CCCCCC/000000?text=P"
-                  alt="Profile Avatar"
-                  className="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-green-500 transition duration-300 ease-in-out"
-                />
-                {profileMenuOpen && (
-                  <motion.div
-                    className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ul className="py-2">
-                      <li
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-gray-800 font-medium"
-                        onClick={() => { navigate("/profile"); setProfileMenuOpen(false); }}
-                      >
-                        Profile
-                      </li>
-                      <li
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-red-600 font-medium"
-                        onClick={handleLogout}
-                      >
-                        Logout
-                      </li>
-                    </ul>
-                  </motion.div>
-                )}
-              </div>
-            </div>
-          )}
 
           {/* Mobile Menu Icon (visible on small screens only) */}
           <div
@@ -195,16 +154,7 @@ export default function Header() {
                   Work
                 </Link>
               </li>
-              <li>
-                {/* Changed to Link and proper path */}
-                <Link
-                  to="/testimonials"
-                  onClick={() => setMenuOpen(false)}
-                  className="hover:text-gray-700"
-                >
-                  Testimonials
-                </Link>
-              </li>
+  
               <li>
                 {/* Changed to Link and proper path */}
                 <Link

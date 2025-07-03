@@ -2,17 +2,20 @@ import React from 'react';
 
 const Contact1 = () => {
   return (
-    <div className="min-h-screen bg-white text-yellow flex flex-col lg:flex-row items-center justify-center p-4 font-inter ">
-      {/* Left Section: Image and "Say hello" */}
-      {/* On large screens, this section will take 60% of the width */}
-      <div className="w-full lg:w-3/5 flex flex-col justify-center items-center lg:items-start p-8">
-        <h1 className="text-5xl font-bold mb-8 text-yellow-400">Say hello</h1>
-        <div className="relative w-full max-w-lg lg:max-w-none h-64 lg:h-[400px] rounded-lg overflow-hidden shadow-lg">
-          {/* Placeholder image - replace with your actual image */}
+    <div className="min-h-screen bg-white flex flex-col lg:flex-row items-center justify-center font-inter relative mt-10">
+      {/* "Say hello" text - positioned absolutely to overlap both sections */}
+      {/* Adjusted positioning to ensure visibility and overlap on various screens */}
+      <h1 className="absolute z-20 text-5xl font-bold text-white mix-blend-difference top-[12%] left-4 lg:text-7xl lg:top-16 lg:left-[15%] lg:-translate-x-[60%]">
+        Say hello
+      </h1>
+
+      {/* Left Section: Image */}
+      <div className="w-full lg:w-3/5 flex justify-center items-center p-0 lg:p-0"> {/* Removed padding here to maximize image width */}
+        <div className="relative w-full h-64 lg:h-[500px] overflow-hidden"> {/* Removed rounded-lg and shadow-lg from here for simpler comparison with original image */}
           <img
-            src="/contact_image.png"
+            src="/contact_image.png" // Use your actual image path here, assuming it's in the public folder
             alt="Two men smiling"
-            className="absolute inset-0 w-full h-full object-fit"
+            className="absolute inset-0 w-full h-full object-cover"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = 'https://placehold.co/800x600/221912/FFD700?text=Image+Not+Found';
@@ -21,10 +24,21 @@ const Contact1 = () => {
         </div>
       </div>
 
-      {/* Right Section: Contact Information */}
-      {/* On large screens, this section will take 40% of the width */}
-      <div className="w-full lg:w-2/5 bg-[#221912] p-8 rounded-lg shadow-xl mt-8 lg:mt-0 lg:ml-8">
-        <div className="space-y-8">
+      {/* Right Section: Contact Information with Map Background */}
+      <div
+        className="w-full lg:w-2/5 p-8 relative text-white flex flex-col justify-center"
+        style={{
+          // Use a default background color in case the map image fails to load
+          backgroundColor: '#555555', // A darker grey fallback for now, as seen in your screenshot
+          backgroundImage: 'url(https://maps.googleapis.com/maps/api/staticmap?center=Delhi,India&zoom=10&size=600x600&maptype=roadmap&markers=color:red%7Clabel:D%7CDelhi,India&key=AIzaSyXXXXXX...)', // Replace YOUR_API_KEY
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          minHeight: '400px', // Ensure it has a height similar to the image
+        }}
+      >
+        {/* Overlay for readability, slightly less opaque for map to show through better */}
+        <div className="absolute inset-0 bg-black opacity-40"></div> 
+        <div className="relative z-10 space-y-8">
           {/* Email */}
           <div className="flex items-start">
             <div className="flex-shrink-0 mr-4">
@@ -47,7 +61,7 @@ const Contact1 = () => {
             </div>
             <div>
               <p className="text-gray-300 text-sm">Give us a Call</p>
-              <a href="tel:+49.40.5069118" className="text-yellow-400 text-lg font-medium hover:underline">+91 7701858312</a>
+              <a href="tel:+917701858312" className="text-yellow-400 text-lg font-medium hover:underline">+91 7701858312</a>
             </div>
           </div>
 
@@ -61,7 +75,6 @@ const Contact1 = () => {
             <div>
               <p className="text-gray-300 text-sm">Say Hello, and Grab a Coffee or Beer</p>
               <p className="text-yellow-400 text-lg font-medium">Delhi</p>
-              {/* <p className="text-yellow-400 text-lg font-medium">20357 Hamburg</p> */}
             </div>
           </div>
         </div>

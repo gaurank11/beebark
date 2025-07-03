@@ -8,14 +8,16 @@ import HeroSection from '../components/Hero';
 import Services from '../components/services';
 import M_Services from '../components/m_services';
 import AutoScrollPortfolio from '../components/Portfolio_auto';
+import Work from '../components/work';
 
 const Home = () => {
   return (
     <div className="bg-white text-gray-800">
       <HeroSection />
       <AboutUs />
-     <AutoScrollPortfolio/>
-      <Categories />
+      <Work />
+  
+     
        {/* <Services /> */}
   
     
