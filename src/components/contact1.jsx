@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact1 = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col lg:flex-row items-center justify-center font-inter relative mt-10">
+    <div className="min-h-screen bg-white flex flex-col lg:flex-row items-center justify-center font-inter relative mt-10 ">
       {/* "Say hello" text - positioned absolutely to overlap both sections */}
       {/* Adjusted positioning to ensure visibility and overlap on various screens */}
       <h1 className="absolute z-20 text-5xl font-bold text-white mix-blend-difference top-[12%] left-4 lg:text-7xl lg:top-16 lg:left-[15%] lg:-translate-x-[60%]">
