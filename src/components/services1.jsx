@@ -69,8 +69,8 @@ const Service1 = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
       {/* Header Section - Mimicking image_d0522d.png */}
-      <header className="container mx-auto py-16 mt-12 px-4 text-center ">
-        <h1 className="px-10 text-5xl md:text-6xl font-serif font-bold leading-tight mb-6 text-gray-900">
+      <header className="container mx-auto py-16 mt-12 px-4 md:text-center ">
+        <h1 className="px-10 text-4xl md:text-6xl font-serif font-bold leading-tight mb-6 text-gray-900">
           Our job: solving your business challenges. Let's fix yours.
         </h1>
         {/* <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
