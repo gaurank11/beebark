@@ -11,6 +11,8 @@ import JoinUs from "./components/join";
 import SignUpPage from "./components/signup";
 import Service1 from "./components/services1";
 import Contact1 from "./components/contact1";
+import AboutPage from "./components/about";
+import Work1 from "./components/work1";
 
 export default function App() {
   const location = useLocation();
@@ -26,7 +28,6 @@ export default function App() {
       <main className="flex-grow"> 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutUs />} />
           <Route path="/LetsTalk" element={<LetsTalk />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/login" element={<LoginPage />} />
@@ -34,6 +35,8 @@ export default function App() {
           <Route path="/join" element={<JoinUs />} />
           <Route path="/services" element ={<Service1/>} />
            <Route path="/contact" element={<Contact1/>} />
+           <Route path="/about" element={<AboutPage/>} />
+           <Route path="/potterzwheel" element={<Work1/>} />
       
         </Routes>
       </main>

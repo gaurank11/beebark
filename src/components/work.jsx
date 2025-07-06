@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import the Link component
 
 // Main App component
 const Work = () => {
@@ -8,26 +9,21 @@ const Work = () => {
       id: 'PotterzWheel Realty',
       title: 'PotterzWheel Realty',
       description: 'Brand Strategy, Website Development',
-      imageUrl: 'https://placehold.co/600x400/ADD8E6/000000?text=Potterzwheel+Project', // Placeholder image URL
-      link: '/work/surfe',
+      imageUrl: 'https://placehold.co/600x400/ADD8E6/000000?text=Potterzwheel+Project',
+      link: '/potterzwheel',
     },
     {
       id: 'Trizzone',
       title: 'Trizzone',
       description: 'Brand Strategy, Website Development',
-      imageUrl: 'https://placehold.co/600x400/000000/FFFFFF?text=Trizzone+Project', // Placeholder image URL
-      link: '/work/polyai',
+      imageUrl: 'https://placehold.co/600x400/000000/FFFFFF?text=Trizzone+Project',
+      link: '/trizzone', // Changed to '/trizzone' for a distinct path
     },
     // Add more projects as needed
   ];
 
-  // Function to handle navigation (simulated for this example)
-  const navigateTo = (path) => {
-    console.log(`Navigating to: ${path}`);
-    // In a real React app, you would use react-router-dom's history.push(path) or navigate(path)
-    // For this standalone example, we'll just log the navigation.
-    // window.location.href = path; // Uncomment this line to actually navigate in a browser
-  };
+  // The navigateTo function is no longer needed for direct Link usage.
+  // If you need programmatic navigation (e.g., after an API call), you would use `useNavigate` hook.
 
   return (
     <div className="font-sans antialiased bg-white text-gray-900 min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -40,10 +36,11 @@ const Work = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {projects.map((project) => (
-            <div
+            // Use Link component here instead of a div with onClick
+            <Link
               key={project.id}
-              className="group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2"
-              onClick={() => navigateTo(project.link)}
+              to={project.link} // The 'to' prop is where you specify the destination path
+              className="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 block" // Added 'block' to make the entire Link clickable area
             >
               {/* Project Image */}
               <div className="relative w-full h-64 sm:h-80 md:h-96 bg-gray-200">
@@ -68,19 +65,19 @@ const Work = () => {
                   {project.description}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         {/* See More Work Link */}
         <div className="text-center mt-20 mb-10">
-          <button
-            onClick={() => navigateTo('/work')}
+          <Link // Use Link here as well
+            to="/work" // Destination path
             className="relative inline-block text-2xl sm:text-3xl font-medium text-gray-900 py-2 px-4 group focus:outline-none"
           >
             <span className="relative z-10 font-inter">See more work</span>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-gray-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>
