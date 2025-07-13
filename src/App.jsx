@@ -41,7 +41,7 @@ export default function App() {
            <Route path="/about" element={<AboutPage/>} />
            <Route path="/potterzwheel" element={<Work1/>} />
            <Route path="/manifesto" element={<ManifestoPage/>} />
-            {/* <Route path="/work" element={<WorkPage/>} /> */}
+            <Route path="/work" element={<WorkPage/>} />
       
         </Routes>
       </main>

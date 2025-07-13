@@ -34,10 +34,10 @@ const Services = () => {
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-6 lg:px-20">
-        <h1 className="text-5xl font-bold text-gray-900 text-center pt-24 pb-16 mt-10 font-sans">
+        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 text-center pt-24 pb-16 mt-10 font-sans">
           Transforming Ideas into Iconic Digital Brands
         </h1>
-        <p className="text-xl text-gray-600 text-center mb-20 max-w-3xl mx-auto font-sans">
+        <p className="text-xl md:text-2xl text-gray-600 text-center mb-20 max-w-3xl mx-auto font-sans">
          From vision to execution — we craft brands, design immersive interfaces, engineer scalable systems, and drive digital growth with powerful marketing.
         </p>
 

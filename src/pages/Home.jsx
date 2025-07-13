@@ -17,7 +17,7 @@ const Home = () => {
       <HeroSection />
       <AboutUs />
       <Work />
-           <FunnelContainer/>
+           {/* <FunnelContainer/> */}
   
      
        {/* <Services /> */}
