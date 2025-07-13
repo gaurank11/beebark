@@ -9,14 +9,14 @@ const Work = () => {
       id: 'PotterzWheel Realty',
       title: 'Potterzwheel Realty',
       description: 'Brand Strategy, Website Development',
-      imageUrl: 'https://placehold.co/600x400/1E3A8A/FFFFFF?text=Potterzwheel',
+      imageUrl: '/Potterzwheel.png',
       link: '/potterzwheel',
     },
     {
       id: 'Trizzone',
       title: 'Trizzone',
       description: 'Brand Strategy, Website Development',
-      imageUrl: 'https://placehold.co/600x400/000000/FFFFFF?text=Trizzone',
+      imageUrl: '/trizzone.jpeg',
       link: '/trizzone', // Changed to '/trizzone' for a distinct path
     },
     // Add more projects as needed
@@ -47,7 +47,7 @@ const Work = () => {
                 <img
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-full object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-fit rounded-t-xl transition-transform duration-300 group-hover:scale-105"
                   // Fallback for image loading errors
                   onError={(e) => {
                     e.target.onerror = null; // Prevent infinite loop

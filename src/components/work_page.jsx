@@ -41,9 +41,9 @@ const WorkPage = () => {
         <div className="md:w-1/2 flex justify-center items-center bg-blue-900 mt-8 md:mt-0"> {/* Image box without internal padding */}
           {/* Placeholder for Trizzone image. Replace 'https://placehold.co/600x400/FFD700/000000?text=Trizzone+Image' with your actual image URL */}
           <img
-            src="https://placehold.co/600x400/1E3A8A/FFFFFF?text=Potterzwheel"
-            alt="Trizzone"
-            className="w-full h-full object-cover" // Ensure image fills and maintains aspect ratio
+            src="/Potterzwheel.png"
+            alt="Potterzwheel"
+            className="w-full h-full object-fit" // Ensure image fills and maintains aspect ratio
             onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/600x400/CCCCCC/000000?text=Image+Error'; }}
           />
         </div>
@@ -66,18 +66,18 @@ const WorkPage = () => {
         <div className="md:w-1/2 flex justify-center items-center bg-yellow-300 mt-8 md:mt-0"> {/* Image box without internal padding */}
           {/* Placeholder for Trizzone image. Replace 'https://placehold.co/600x400/FFD700/000000?text=Trizzone+Image' with your actual image URL */}
           <img
-            src="https://placehold.co/600x400/000000/FFFFFF?text=Trizzone"
+            src="/trizzone.jpeg"
             alt="Trizzone"
-            className="w-full h-full object-cover" // Ensure image fills and maintains aspect ratio
+            className="w-full h-full object-fit" // Ensure image fills and maintains aspect ratio
             onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/600x400/CCCCCC/000000?text=Image+Error'; }}
           />
         </div>
       </section>
 
       {/* Call to Action Section for TheBeeBark */}
-      <section className="bg-[#221912] text-center py-20 px-4">
+      <section className="bg-[#E2DED0]  text-center py-20 px-4">
         <div className="border-t border-b border-gray-700 py-12 max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-10 leading-tight text-white">Ready to make some noise?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-10 leading-tight text-[#221912]">Ready to make some noise?</h2>
           <button onClick={() => navigateTo('/contact')} className="bg-yellow-400 hover:bg-yellow-500 text-[#221912] font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
             CONTACT US
           </button>
