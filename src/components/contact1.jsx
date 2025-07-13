@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+  Mail,
+  Phone,
+  MapPin
+} from "lucide-react";
 
 const Contact1 = () => {
   return (
@@ -14,7 +19,7 @@ const Contact1 = () => {
         {/* Adjusted 'top' value to be relative to its new parent's position within the padded area.
             'top-[initial]' on large screens and a slightly lower 'top-[5%]' on small screens
             can help maintain overlap without being too high. */}
-        <h1 className="absolute z-10 text-5xl font-bold text-white mix-blend-difference top-[-5%] left-4 lg:text-7xl lg:top-[-5%] lg:left-[15%] lg:-translate-x-[60%]">
+        <h1 className="absolute z-10 text-5xl font-bold text-white mix-blend-difference top-[-5%] left-4 lg:text-7xl lg:top-[-7%] lg:left-[15%] lg:-translate-x-[60%]">
           Say hello
         </h1>
 
@@ -39,9 +44,9 @@ const Contact1 = () => {
           style={{
             backgroundColor: '#555555',
             // Using a placeholder map for Delhi. Replace YOUR_Maps_API_KEY with your actual key.
-            backgroundImage: `url("https://maps.googleapis.com/maps/api/staticmap?center=Delhi,India&zoom=10&size=600x600&maptype=roadmap&markers=color:red%7Clabel:D%7CDelhi,India&key=YOUR_Maps_API_KEY")`,
+            backgroundImage: `url("/location.png")`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'left',
             minHeight: '400px',
           }}
         >
@@ -51,9 +56,7 @@ const Contact1 = () => {
             {/* Email */}
             <div className="flex items-start">
               <div className="flex-shrink-0 mr-4">
-                <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
+                <Mail className="w-6 h-6 text-yellow-400" />
               </div>
               <div>
                 <p className="text-gray-300 text-sm">Shoot us an Email</p>
@@ -64,9 +67,7 @@ const Contact1 = () => {
             {/* Phone */}
             <div className="flex items-start">
               <div className="flex-shrink-0 mr-4">
-                <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684L10.5 9.87a1 1 0 00.54 1.06l7.18 3.59a1 1 0 001.06.54l3.59-.718a1 1 0 01.718.106l.718.718a1 1 0 01.106.718l-.718 3.59a1 1 0 01-.54 1.06l-3.59.718a1 1 0 01-1.06-.54l-7.18-3.59a1 1 0 00-1.06-.54l-3.59.718a1 1 0 01-.718-.106l-.718-.718a1 1 0 01-.106-.718l.718-3.59a1 1 0 01.54-1.06z"></path>
-                </svg>
+                  <Phone className="w-6 h-6 text-yellow-400" />
               </div>
               <div>
                 <p className="text-gray-300 text-sm">Give us a Call</p>
@@ -77,13 +78,12 @@ const Contact1 = () => {
             {/* Address */}
             <div className="flex items-start">
               <div className="flex-shrink-0 mr-4">
-                <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0L6.343 16.657m11.314 0A8.996 8.996 0 0012 15c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z"></path>
-                </svg>
+                <MapPin className="w-6 h-6 text-yellow-400" />
+
               </div>
               <div>
                 <p className="text-gray-300 text-sm">Visit our Delhi Office</p>
-                <p className="text-yellow-400 text-lg font-medium">Delhi, India</p>
+                <p className="text-yellow-400 text-lg font-medium">125, Second Floor, 125, Shahpur Jat, Siri Fort, New Delhi, Delhi 110049</p>
               </div>
             </div>
           </div>

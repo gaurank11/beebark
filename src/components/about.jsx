@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 // --- Image URLs from Stock Photo Sites (e.g., Unsplash) ---
 // These URLs are illustrative. In a real project, you'd host these images and ideally use a responsive image solution.
@@ -10,11 +11,11 @@ const fullWidthCommunityUrl = 'https://images.unsplash.com/photo-1516321497487-e
 
 const AboutPage = () => {
   return (
-    <div className="font-inter bg-white text-[#333333] antialiased">
+    <div className="font-sans bg-white text-[#333333] antialiased">
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-20 md:py-32 pt-10 mt-10">
         <div className="max-w-7xl mx-auto text-center md:text-left">
-          <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-6 text-[#333333]">
+          <h1 className="text-5xl md:text-7xl font-inter font-bold leading-tight mb-6 text-[#333333]">
             About Beebark
           </h1>
           <p className="text-xl md:text-2xl leading-relaxed text-[#555555] mb-4">
@@ -45,7 +46,7 @@ const AboutPage = () => {
             </h3>
           </div>
           <div className="md:col-span-9">
-            <h2 className="text-3xl md:text-5xl font-serif leading-tight mb-8 text-[#333333]">
+            <h2 className="text-3xl md:text-5xl font-inter leading-tight mb-8 text-[#333333]">
               We work with companies that mean the world to their people but need our help to mean something to the world.
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-lg md:text-xl leading-relaxed text-[#555555]">
@@ -103,75 +104,97 @@ const AboutPage = () => {
       </section>
 
       {/* Core Values Section */}
-      <section className="container mx-auto px-6 py-20 md:py-32">
-        <h2 className="text-4xl md:text-6xl font-serif leading-tight mb-16 text-center text-yellow-400">
-          Our Core Values
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
-          {/* Value 1 */}
-          <div>
-            <h3 className="text-4xl md:text-5xl font-serif text-yellow-400 mb-4">01</h3>
-            <h4 className="text-xl md:text-2xl font-semibold mb-4 text-[#333333]">Community First</h4>
-            <p className="text-base md:text-lg leading-relaxed text-[#555555]">
-              Fostering a supportive and collaborative environment where architects, designers, realtors, and builders can connect, share, and grow together.
-            </p>
-          </div>
-          {/* Value 2 */}
-          <div>
-            <h3 className="text-4xl md:text-5xl font-serif text-yellow-400 mb-4">02</h3>
-            <h4 className="text-xl md:text-2xl font-semibold mb-4 text-[#333333]">Empowering Growth</h4>
-            <p className="text-base md:text-lg leading-relaxed text-[#555555]">
-              Providing the essential tools, resources, and opportunities that empower professionals to showcase their work, expand their networks, and elevate their careers.
-            </p>
-          </div>
-          {/* Value 3 */}
-          <div>
-            <h3 className="text-4xl md:text-5xl font-serif text-yellow-400 mb-4">03</h3>
-            <h4 className="text-xl md:text-2xl font-semibold mb-4 text-[#333333]">Quality & Craft</h4>
-            <p className="text-base md:text-lg leading-relaxed text-[#555555]">
-              Upholding the highest standards in everything we do, from the quality of our platform and services to the integrity of our interactions, valuing excellence and meticulous craft.
-            </p>
-          </div>
-          {/* Value 4 */}
-          <div>
-            <h3 className="text-4xl md:text-5xl font-serif text-yellow-400 mb-4">04</h3>
-            <h4 className="text-xl md:text-2xl font-semibold mb-4 text-[#333333]">Innovation & Adaptability</h4>
-            <p className="text-base md:text-lg leading-relaxed text-[#555555]">
-              Continuously evolving our platform and services, embracing new technologies and ideas to meet the dynamic needs of the architecture, design, and construction industries.
-            </p>
-          </div>
-          {/* Value 5 */}
-          <div>
-            <h3 className="text-4xl md:text-5xl font-serif text-yellow-400 mb-4">05</h3>
-            <h4 className="text-xl md:text-2xl font-semibold mb-4 text-[#333333]">Transparency & Trust</h4>
-            <p className="text-base md:text-lg leading-relaxed text-[#555555]">
-              Building strong, lasting relationships based on open communication, honesty, and mutual respect, ensuring trust is at the core of every interaction.
-            </p>
-          </div>
-          {/* Value 6 */}
-          <div>
-            <h3 className="text-4xl md:text-5xl font-serif text-yellow-400 mb-4">06</h3>
-            <h4 className="text-xl md:text-2xl font-semibold mb-4 text-[#333333]">Impact Driven</h4>
-            <p className="text-base md:text-lg leading-relaxed text-[#555555]">
-              Committed to creating tangible value and positive impact for our users, ensuring that our platform helps them achieve their professional goals and expand their influence.
-            </p>
-          </div>
-        </div>
-      </section>
+   <section className="container mx-auto px-6 py-20 md:py-32">
+  <h2 className="text-4xl md:text-6xl font-inter leading-tight mb-16 text-center text-yellow-400">
+    Our Core Values
+  </h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+    {[
+      {
+        number: "01",
+      title: "We Begin With Honesty",
+      description:
+        "We tell the truth—about who we are, what we offer, and what we cannot promise. Honesty is our first act of service to our clients, team, and selves.",
+    },
+    {
+          number: "02",
+      title: "We Choose Hope Over Fear",
+      description:
+        "Even when things are uncertain, we believe that the right people, opportunities, and ideas will meet us as we walk in alignment.",
+    },
+    {
+          number: "03",
+      title: "We Surrender to a Higher Vision",
+      description:
+        "We are not here to just build an ecosystem. We are here to create transformation—within ourselves, for our clients, and through every interaction.",
+    },
+    {
+          number: "04",
+      title: "We Stay Accountable",
+      description:
+        "We regularly review where our business is aligned—and where it's not. We don't hide behind perfection or pride. We clean the mirror daily.",
+    },
+    {
+          number: "05",
+      title: "We Share Openly",
+      description:
+        "We speak about our struggles and our growth. Vulnerability is part of our leadership. Transparency is part of our culture.",
+    },
+    {
+          number: "06",
+      title: "We Let Go of What Blocks Us",
+      description:
+        "Ego, control, fear, procrastination—they don’t lead here. We pause, listen, and choose again. We stay willing to change.",
+    },
 
-      {/* CEO Quote Section */}
-      <section className="container mx-auto px-6 py-20 md:py-32 text-center">
-        <blockquote className="text-4xl md:text-5xl font-serif leading-tight text-[#6B5742] mb-8">
-          “More than a platform — it’s where your projects meet new opportunities.”
-        </blockquote>
-        <p className="text-lg md:text-xl font-semibold uppercase tracking-wider text-[#333333]">
-          Arjun Tandon, CEO & Co-founder
-        </p>
-      </section>
+    ].map((value, index) => (
+      <div key={index}>
+        <h3 className="text-4xl md:text-5xl font-inter text-yellow-400 mb-4">{value.number}</h3>
+        <h4 className="text-xl md:text-2xl font-semibold mb-4 text-[#333333]">{value.title}</h4>
+        <p className="text-base md:text-lg leading-relaxed text-[#555555]">{value.description}</p>
+      </div>
+    ))}
+  </div>
+
+  {/* Manifesto Button */}
+  <div className="mt-16 text-center">
+    <Link
+      to="/manifesto"
+      className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
+    >
+      Read the Full Manifesto
+    </Link>
+  </div>
+</section>
+
+      {/* Cofounders Quote Section */}
+   <section className="container mx-auto px-6 py-20 md:py-32">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
+    {/* Arjun's Quote */}
+    <div>
+      <blockquote className="text-2xl md:text-4xl font-inter leading-tight text-[#6B5742] mb-6">
+        “More than a platform — it’s where your projects meet new opportunities.”
+      </blockquote>
+      <p className="text-lg md:text-xl font-semibold uppercase tracking-wider text-[#333333]">
+        Arjun, Co-founder
+      </p>
+    </div>
+
+    {/* Aman's Quote */}
+    <div>
+      <blockquote className="text-2xl md:text-4xl font-inter leading-tight text-[#6B5742] mb-6">
+        “At Beebark, we don’t just build — we empower creators to lead with purpose and passion.”
+      </blockquote>
+      <p className="text-lg md:text-xl font-semibold uppercase tracking-wider text-[#333333]">
+        Aman, Co-founder
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Placeholder for a potential CTA / Footer section */}
       <section className="bg-[#E2DED0] py-16 text-center text-[#333333]">
-        <h2 className="text-3xl md:text-4xl font-serif mb-6">Join the Beebark Community Today!</h2>
+        <h2 className="text-3xl md:text-4xl font-inter mb-6">Join the Beebark Community Today!</h2>
         <button className="bg-[#6B5742] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#333333] transition-colors duration-300">
           Get Started
         </button>

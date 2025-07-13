@@ -1,7 +1,15 @@
 import React from "react";
 import logo from "../assets/bbark.png"
+import { useNavigate } from 'react-router-dom'; 
 
 const AboutUs = () => {
+
+   const navigate = useNavigate();  
+
+
+  const navigateTo = (path) => {
+    navigate(path);
+  };
   return (
     <div className="min-h-screen flex flex-col">
       {/* Desktop and Laptop View */}
@@ -9,16 +17,17 @@ const AboutUs = () => {
         {/* Left Grid - Content */}
         <div className="bg-[#221912] flex flex-col justify-center items-center p-8">
           <div className="max-w-md text-left">
-            <h2 className="text-5xl font-bold mb-4 text-white font-montserrat">
-              Real Solutions for Real Estate
+            <h2 className="text-5xl font-bold mb-4 text-white font-sans">
+             Real Solutions for Real Brands. Built to Lead. Built to Win.
             </h2>
-            <p className="text-2xl text-gray-100 mb-6 text-left font-poppins">
-              At <span className="font-bold text-yellow-300">TheBeeBark</span>,
-              we craft digital solutions inspired by nature’s architects. With
-              integrity and creativity, we empower builders, architects, and
-              designers.
+            <p className="text-2xl text-gray-100 mb-6 text-left font-inter">
+              At <span className="font-bold text-yellow-300">BeeBark</span>,
+            we don’t just build websites or run ads—we build brands that refuse to be ignored.
+           No noise. No fluff. Just pure, unapologetic execution.
+          If you're here to play it safe, we're not for you.
+           But if you're here to make noise, break rules, and own your space
             </p>
-            <button className="px-6 py-3 text-yellow-300 font-medium border-2 border-yellow-300 rounded hover:bg-yellow-300 hover:text-white font-poppins">
+            <button onClick={() => navigateTo('/about')}className="px-6 py-3 text-yellow-300 font-medium border-2 border-yellow-300 rounded hover:bg-yellow-300 hover:text-white font-inter">
               Company
             </button>
           </div>
@@ -50,15 +59,14 @@ const AboutUs = () => {
         </div>
         {/* Text Section */}
         <div className="text-left text-white max-w-sm mt-auto">
-          <h2 className="text-2xl font-bold mb-4 font-montserrat">
-            Real Solutions for Real Estate
+          <h2 className="text-2xl font-bold mb-4 font-sans">
+       Real Solutions for Real Brands. Built to Lead. Built to Win.
           </h2>
-          <p className="text-base mb-6 font-poppins">
-            At <span className="font-bold">TheBeeBark</span>, we craft digital
-            solutions inspired by nature’s architects. With integrity and
-            creativity, we empower builders, architects, and designers.
+          <p className="text-base mb-6 font-inter">
+            At <span className="font-bold">BeeBark</span>, we don’t just build websites or run ads—we build brands that refuse to be ignored. No noise. No fluff. Just pure, unapologetic execution. If you're here to play it safe, we're not for you.
+           But if you're here to make noise, break rules, and own your space.
           </p>
-          <button className="px-6 py-3 text-[#221912] font-medium bg-white rounded border-2 border-white hover:text-white font-poppins">
+          <button onClick={() => navigateTo('/about')} className="px-6 py-3 text-[#221912] font-medium bg-white rounded border-2 border-white hover:text-white font-inter">
             Company
           </button>
         </div>

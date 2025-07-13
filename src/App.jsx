@@ -13,6 +13,9 @@ import Service1 from "./components/services1";
 import Contact1 from "./components/contact1";
 import AboutPage from "./components/about";
 import Work1 from "./components/work1";
+import ManifestoPage from "./pages/Manifesto";
+import WorkPage from "./components/work_page";
+import Services from "./components/services";
 
 export default function App() {
   const location = useLocation();
@@ -33,10 +36,12 @@ export default function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/join" element={<JoinUs />} />
-          <Route path="/services" element ={<Service1/>} />
+          <Route path="/services" element ={<Services/>} />
            <Route path="/contact" element={<Contact1/>} />
            <Route path="/about" element={<AboutPage/>} />
            <Route path="/potterzwheel" element={<Work1/>} />
+           <Route path="/manifesto" element={<ManifestoPage/>} />
+            {/* <Route path="/work" element={<WorkPage/>} /> */}
       
         </Routes>
       </main>

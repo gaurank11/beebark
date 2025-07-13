@@ -1,153 +1,152 @@
-import React, { useRef, useEffect, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import image1 from "../assets/image1.jpeg";
-import image2 from "../assets/image2.jpeg";
-import image3 from "../assets/image3.jpeg";
-import image4 from "../assets/image4.jpeg";
-import image5 from "../assets/image5.jpeg";
-import image6 from "../assets/image6.jpeg";
-import image7 from "../assets/image7.jpeg";
-import image8 from "../assets/image8.jpeg";
-import image9 from "../assets/image9.jpeg";
-import image10 from "../assets/image10.jpeg";
+// Services.jsx
+import React from 'react';
+import ServiceSection from './ServiceSection';
 
-gsap.registerPlugin(ScrollTrigger);
-
-const services = [
-  {
-    title: "AI-Enhanced Web Presence & Digital Growth",
-    description:
-      "Leveraging Al to optimize online visibility, engagement, and business expansion. Transforming digital strategies with intelligent automation and data-driven insights.",
-    image: image1,
-  },
-  {
-    title: "Luxury Branding & Identity Elevation",
-    description:
-      "Crafting exclusive brand identities that exude sophistication, prestige, and timeless appeal. Elevating perception through refined aesthetics, storytelling, and strategic positioning.",
-    image: image2,
-  },
-  {
-    title: "Elite Networking & Industry Synergy Hub",
-    description:
-      "Connecting top professionals to foster collaboration, growth, and industry innovation. A premier platform for high-impact partnerships and strategic alliances.",
-    image:image3,
-  },
-  {
-    title: "AI-Driven Client Acquisition & Smart Lead Generation",
-    description:
-      "Leveraging Al to attract, engage, and convert high-quality leads efficiently. Optimizing outreach with data-driven insights and automation.",
-    image: image4,
-  },
-  {
-    title: "Immersive Project Showcasing & Intelligent Portfolio Curation",
-    description:
-      "Showcasing projects with dynamic, interactive experiences. Curating portfolios with Al-driven precision for maximum impact.",
-    image: image5,
-  },
-  {
-    title: "Precision Talent Sourcing & AI-Powered Hiring Solutions",
-    description:
-      "Leveraging Al to identify top talent with speed and accuracy. Streamlining recruitment for smarter, data-driven hiring decisions",
-    image: image6,
-  },
-  {
-    title: "Strategic Project Bidding & Scalable Business Expansion",
-    description:
-      "Optimizing bids for high-value projects with data-driven strategies. Driving sustainable growth through smart scaling solutions.",
-    image: image7,
-  },
-  {
-    title: "Premier Industry Summits & AI-Backed Growth Acceleration",
-    description:
-      "Hosting elite summits to foster innovation and collaboration. Leveraging Al to drive strategic business growth and expansion.",
-    image:image8,
-  },
-  {
-    title: "AI-Optimized Property Marketplace: Buy, Sell, Rent and Lease",
-    description:
-      "Streamlining real estate transactions with intelligent automation. Connecting buyers, sellers, and renters with data-driven precision.",
-    image: image9,
-  },
-  {
-    title: "Architectural Commerce & Bespoke Design Marketplace",
-    description:
-      "A premier hub for exclusive architectural solutions and custom designs. Connecting visionaries with tailored, high-end design innovations.",
-    image: image10,
-  },
-];
+const FloatingShape = ({ className, children }) => (
+  <div className={`absolute z-0 ${className} pointer-events-none`}>
+    {children}
+  </div>
+);
 
 const Services = () => {
-  const containerRef = useRef(null);
-  const wrapperRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(1);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    const extraScroll = 450;
-    const totalScrollWidth = container.scrollWidth - window.innerWidth + extraScroll;
-
-    // Animate cards scroll
-    gsap.to(container, {
-      x: () => `-${totalScrollWidth}px`,
-      ease: "none",
-      scrollTrigger: {
-        trigger: wrapperRef.current,
-        start: "top top",
-        end: () => `+=${totalScrollWidth}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-        onUpdate: (self) => {
-          const progress = self.progress; // value from 0 to 1
-          const index = Math.round(progress * (services.length - 1)) + 1;
-          setCurrentIndex(index);
-        },
-      },
-    });
-
-    return () => ScrollTrigger.killAll();
-  }, []);
-
   return (
-    <section id="services" ref={wrapperRef} className="relative w-full h-screen overflow-hidden flex items-center bg-gray-50">
+    <div className="min-h-screen bg-white font-sans relative overflow-x-hidden">
+      {/* Floating Animated 3D-like Shapes */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Cube */}
+        <FloatingShape className="top-[12%] left-[6%] w-[22rem] h-[22rem] animate-cube">
+          <div className="w-full h-full bg-yellow-50 shadow-2xl transform rotate-45"></div>
+        </FloatingShape>
 
- <div className="w-1/3 text-left px-5 mr-20 pr-20 z-10">
-    <h2 className="text-3xl md:text-7xl font-bold text-[#221912]">
-      Our <span className="text-yellow-400 text-4xl md:text-8xl">SaaS</span> Services
-    </h2>
-  </div>
-    
-      {/* 🚀 Cards container */}
-      <div
-        ref={containerRef}
-        className="flex space-x-10 mx-12 px-12 h-full items-center relative z-10 bg-transparent"
-        style={{
-          width: `${services.length * 400}px`,
-         
-        }}
-        >
+        {/* Square Pyramid */}
+        <FloatingShape className="bottom-[15%] right-[8%] w-[22rem] h-[22rem] animate-pyramid">
+          <div className="w-0 h-0 border-l-[240px] border-r-[240px] border-b-[400px] border-l-transparent border-r-transparent border-b-yellow-50 opacity-80"></div>
+        </FloatingShape>
 
-      
-       {services.map((service, index) => (
-          <div
-            key={index}
-            className="w-[340px] h-[500px] flex-shrink-0 bg-white shadow-lg border-4 border-yellow-500"
-          >
-            <img
-              src={service.image}
-              alt={service.title}
-              className="w-full h-56 object-cover"
-            />
-            <h3 className="text-xl font-bold mt-4 text-gray-900 p-4">{service.title}</h3>
-            <p className="text-gray-600 mt-2 p-4 ">{service.description}</p>
-          </div>
-        ))}
+        {/* Cone */}
+        <FloatingShape className="top-[45%] left-[40%] w-[22rem] h-[22rem] animate-cone">
+          <div className="w-0 h-0 border-l-[200px] border-r-[200px] border-b-[400px] border-l-transparent border-r-transparent border-b-yellow-50 rounded-b-full opacity-70"></div>
+        </FloatingShape>
+
+        {/* Ring (Donut) */}
+        <FloatingShape className="bottom-[25%] left-[10%] w-[22rem] h-[22rem] animate-ring rounded-full border-[48px] border-yellow-100 border-t-transparent border-l-transparent opacity-50"></FloatingShape>
       </div>
-    </section>
+
+      {/* Main Content */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-20">
+        <h1 className="text-5xl font-bold text-gray-900 text-center pt-24 pb-16 mt-10 font-sans">
+          Transforming Ideas into Iconic Digital Brands
+        </h1>
+        <p className="text-xl text-gray-600 text-center mb-20 max-w-3xl mx-auto font-sans">
+         From vision to execution — we craft brands, design immersive interfaces, engineer scalable systems, and drive digital growth with powerful marketing.
+        </p>
+
+        {/* Sections */}
+     <ServiceSection
+  title="Branding"
+  subtitle="🟡 Build a Brand That Commands Attention."
+  description="We don’t do logos—we create identities. From naming to visuals to voice, we shape brands that stand tall, speak loud, and stay unforgettable. Whether you're starting fresh or evolving, we craft a brand presence that owns space in the market—and in minds."
+  points={[
+    'Brand Strategy',
+    'Brand Architecture',
+    'Verbal Identity',
+    'Visual Identity',
+    'Brand Guidelines',
+    'Brand Experiences',
+  ]}
+  imageSrc="/branding.jpg"
+/>
+
+<ServiceSection
+  title="Digital Marketing"
+  subtitle="🔴 Reach More. Sell More. Be Everywhere."
+  description="We don’t guess—we strategize. From Meta Ads to Google Ads, SEO to email flows, we create digital campaigns that generate real results. We find your audience, speak their language, and move them to action. Growth isn’t a dream—it’s the plan."
+  points={[
+    'SEO & SEM',
+    'Meta & Google Ads',
+    'Email Marketing',
+    'Funnel Optimization',
+    'Analytics & Reporting',
+    'Social Media Strategy',
+  ]}
+  imageSrc="/marketing.webp"
+  isReversed
+/>
+
+<ServiceSection
+  title="Website Design"
+  subtitle="🔵 Design That Does More Than Look Good."
+  description="Your website is more than a portfolio—it's your frontline. We build high-performing, mobile-first websites that don't just look amazing, but work like your best salesperson—24/7. Fast, intuitive, and conversion-focused. Designed to turn visitors into believers."
+  points={[
+    'Responsive Web Design',
+    'UI/UX Strategy',
+    'Interactive Experiences',
+    'Conversion Optimization',
+    'Custom CMS Setup',
+    'Performance Tuning',
+  ]}
+  imageSrc="/webdesign.jpg"
+/>
+
+<ServiceSection
+  title="Development"
+  subtitle="🟢 Code That Powers Growth."
+  description="We optimize search engine visibility, ensure accessibility, and maximize performance."
+  points={[
+    'Tech Consulting',
+    'Architecture Planning',
+    'Mobile App Dev',
+    'Frontend/Backend Dev',
+    'API Integration',
+    'AI, AR/VR, Web3',
+  ]}
+  imageSrc="/development.jpg"
+  isReversed
+/>
+      </div>
+
+      {/* Style Block */}
+      <style jsx="true">{`
+        @keyframes cube {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        @keyframes ring {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pyramid {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-30px); }
+          100% { transform: translateY(0); }
+        }
+
+        @keyframes cone {
+          0% { transform: scale(1) rotate(0deg); }
+          50% { transform: scale(1.1) rotate(180deg); }
+          100% { transform: scale(1) rotate(360deg); }
+        }
+
+        .animate-cube {
+          animation: cube 25s linear infinite;
+        }
+
+        .animate-ring {
+          animation: ring 30s linear infinite;
+        }
+
+        .animate-pyramid {
+          animation: pyramid 10s ease-in-out infinite;
+        }
+
+        .animate-cone {
+          animation: cone 20s ease-in-out infinite;
+        }
+      `}</style>
+    </div>
   );
 };
 
 export default Services;
-
-

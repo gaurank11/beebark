@@ -7,16 +7,16 @@ const Work = () => {
   const projects = [
     {
       id: 'PotterzWheel Realty',
-      title: 'PotterzWheel Realty',
+      title: 'Potterzwheel Realty',
       description: 'Brand Strategy, Website Development',
-      imageUrl: 'https://placehold.co/600x400/ADD8E6/000000?text=Potterzwheel+Project',
+      imageUrl: 'https://placehold.co/600x400/1E3A8A/FFFFFF?text=Potterzwheel',
       link: '/potterzwheel',
     },
     {
       id: 'Trizzone',
       title: 'Trizzone',
       description: 'Brand Strategy, Website Development',
-      imageUrl: 'https://placehold.co/600x400/000000/FFFFFF?text=Trizzone+Project',
+      imageUrl: 'https://placehold.co/600x400/000000/FFFFFF?text=Trizzone',
       link: '/trizzone', // Changed to '/trizzone' for a distinct path
     },
     // Add more projects as needed

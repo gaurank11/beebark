@@ -24,7 +24,7 @@ export default function HeroSection() {
     <section className="flex pt-10 mt-12 h-[80vh] items-center md:h-[83vh]  bg-gray-50 p-6">
       <div className="text-left max-w-7xl mx-2 mt-10 md:mx-10">
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-8xl font-serif font-bold text-gray-900 leading-tight mb-8">
+        <h1 className="text-5xl md:text-8xl font-sans font-bold text-gray-900 leading-tight mb-8">
           We Build The Strongest Web For Your{" "}
           <span className="relative inline-block">
             Brand
