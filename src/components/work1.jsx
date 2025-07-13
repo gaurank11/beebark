@@ -217,12 +217,7 @@ function Work1() {
 
         {/* --- Section: Auto-Changing Carousel (Laptop Size) --- */}
         <section className="py-16 md:py-24 px-4 bg-gray-100 text-zinc-900">
-            <div className="max-w-6xl mx-auto text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">Dynamic Property Visuals (Laptop View)</h2>
-                <p className="text-lg sm:text-xl opacity-90 max-w-prose mx-auto">
-                    A demonstration of our interactive visual solutions, showcasing properties in a captivating, automatically rotating display for desktop users.
-                </p>
-            </div>
+            
             <div className="max-w-6xl mx-auto">
               <AutoChangingCarousel
                 images={[
