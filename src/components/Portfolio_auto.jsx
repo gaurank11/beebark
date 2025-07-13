@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import img1 from "../assets/Sample1.png";
-import img2 from "../assets/Sample2.png";
-import img3 from "../assets/Sample3.png";
+// import img1 from "../assets/Sample1.png";
+// import img2 from "../assets/Sample2.png";
+// import img3 from "../assets/Sample3.png";
 
 const portfolioGroups = [
   {
@@ -18,7 +18,7 @@ const portfolioGroups = [
           "Vastu-compliant spatial arrangement",
           "Integrated indoor-outdoor living",
         ],
-        img: img1,
+        // img: img1,
       },
       {
         title: "Featured Listing",
@@ -28,7 +28,7 @@ const portfolioGroups = [
           "Smart lighting and ventilation system",
           "Modern branding integrations",
         ],
-        img: img2,
+        // img: img2,
       },
       {
         title: "About Us",
@@ -38,7 +38,7 @@ const portfolioGroups = [
           "Premium Italian stone finishes",
           "Smart home integration",
         ],
-        img: img3,
+        // img: img3,
       },
     ],
   },

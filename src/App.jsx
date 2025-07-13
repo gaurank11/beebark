@@ -16,6 +16,7 @@ import Work1 from "./components/work1";
 import ManifestoPage from "./pages/Manifesto";
 import WorkPage from "./components/work_page";
 import Services from "./components/services";
+import Trizzone from "./components/trizzone";
 
 export default function App() {
   const location = useLocation();
@@ -42,6 +43,7 @@ export default function App() {
            <Route path="/potterzwheel" element={<Work1/>} />
            <Route path="/manifesto" element={<ManifestoPage/>} />
             <Route path="/work" element={<WorkPage/>} />
+               <Route path="/trizzone" element={<Trizzone/>} />
       
         </Routes>
       </main>

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/bbark.png"
+import logo from "/bbark.png"
 import { useNavigate } from 'react-router-dom'; 
 
 const AboutUs = () => {

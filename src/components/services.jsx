@@ -44,7 +44,7 @@ const Services = () => {
         {/* Sections */}
      <ServiceSection
   title="Branding"
-  subtitle="🟡 Build a Brand That Commands Attention."
+  subtitle="Build a Brand That Commands Attention."
   description="We don’t do logos—we create identities. From naming to visuals to voice, we shape brands that stand tall, speak loud, and stay unforgettable. Whether you're starting fresh or evolving, we craft a brand presence that owns space in the market—and in minds."
   points={[
     'Brand Strategy',
@@ -59,7 +59,7 @@ const Services = () => {
 
 <ServiceSection
   title="Digital Marketing"
-  subtitle="🔴 Reach More. Sell More. Be Everywhere."
+  subtitle="Reach More. Sell More. Be Everywhere."
   description="We don’t guess—we strategize. From Meta Ads to Google Ads, SEO to email flows, we create digital campaigns that generate real results. We find your audience, speak their language, and move them to action. Growth isn’t a dream—it’s the plan."
   points={[
     'SEO & SEM',
@@ -75,7 +75,7 @@ const Services = () => {
 
 <ServiceSection
   title="Website Design"
-  subtitle="🔵 Design That Does More Than Look Good."
+  subtitle="Design That Does More Than Look Good."
   description="Your website is more than a portfolio—it's your frontline. We build high-performing, mobile-first websites that don't just look amazing, but work like your best salesperson—24/7. Fast, intuitive, and conversion-focused. Designed to turn visitors into believers."
   points={[
     'Responsive Web Design',
@@ -90,7 +90,7 @@ const Services = () => {
 
 <ServiceSection
   title="Development"
-  subtitle="🟢 Code That Powers Growth."
+  subtitle="Code That Powers Growth."
   description="We optimize search engine visibility, ensure accessibility, and maximize performance."
   points={[
     'Tech Consulting',

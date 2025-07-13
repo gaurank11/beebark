@@ -33,7 +33,7 @@ const WorkPage = () => {
           <p className="text-md md:text-lg mb-8 text-gray-800">
             Specialize in connecting you with the perfect property while redefining trust and transparency in real estate. Let's create a seamless journey toward your ideal home.
           </p>
-          <button onClick={() => navigateTo('/contact')} className="bg-[#221912] hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
+          <button onClick={() => navigateTo('/potterzwheel')} className="bg-[#221912] hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
             SEE OUR WORK
           </button>
         </div>
@@ -59,7 +59,7 @@ const WorkPage = () => {
           <p className="text-md md:text-lg mb-8 text-gray-800">
             Showcasing innovative designs and transformative spaces across architecture, interior design, and landscape artistry.
           </p>
-          <button onClick={() => navigateTo('/contact')} className="bg-[#221912] hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
+          <button onClick={() => navigateTo('/trizzone')} className="bg-[#221912] hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
             SEE OUR WORK
           </button>
         </div>

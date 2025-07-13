@@ -22,10 +22,10 @@ const ServiceSection = ({
 
       {/* Text Content */}
       <div className="lg:w-1/2 px-4">
-        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{title}</h3>
+        <h3 className="text-3xl md:text-4xl font-bold text-black mb-2">{title}</h3>
 
         {subtitle && (
-          <p className="text-yellow-400 font-semibold text-xl mb-4">{subtitle}</p>
+          <p className="text-black font-semibold text-xl mb-4">{subtitle}</p>
         )}
 
         <p className="text-gray-700 text-lg leading-relaxed mb-6">{description}</p>
