@@ -34,13 +34,13 @@ const Footer = () => {
         {/* Right Column: Socials and Legal */}
         <div className="flex flex-col items-center lg:items-end">
           <div className="flex space-x-6 mb-6 lg:mb-8">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+            <a href="https://www.facebook.com/share/14MNGec7rEP/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
               <Facebook className="h-7 w-7 sm:h-8 sm:w-8" />
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+            <a href="https://www.instagram.com/agency.beebark?igsh=dmJubjQ3MzMyNnR6&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
               <Instagram className="h-7 w-7 sm:h-8 sm:w-8" />
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+            <a href="https://www.linkedin.com/company/thebeebark/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
               <Linkedin className="h-7 w-7 sm:h-8 sm:w-8" />
             </a>
           </div>

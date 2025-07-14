@@ -11,13 +11,14 @@ import AutoScrollPortfolio from '../components/Portfolio_auto';
 import Work from '../components/work';
 import FunnelContainer from '../components/FunnelContainer';
 
+
 const Home = () => {
   return (
     <div className="bg-white text-gray-800">
       <HeroSection />
       <AboutUs />
       <Work />
-           {/* <FunnelContainer/> */}
+                <FunnelContainer/>
   
      
        {/* <Services /> */}

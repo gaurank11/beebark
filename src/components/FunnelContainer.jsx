@@ -1,66 +1,73 @@
-// src/components/FunnelContainer.jsx
 import React from 'react';
 import FunnelStageInteractive from './FunnelStageInteractive';
-import FunnelEllipses from './FunnelEllipses';
 
 const funnelData = [
   {
     stage: 1,
-    // Add dummy ellipse positioning values for now, adjust based on your SVG
-    ellipseTop: 100, // Approximate top position of the ellipse
-    ellipseHeight: 200, // Approximate height of the ellipse
+    title: "Branding",
+    tagline: "Build a Brand That Commands Attention.",
     activities: [
-      'SEO', 'SEM/PPC', 'Blogging',
-      'Content Marketing', 'Advertising'
-    ]
+      "Brand Strategy",
+      "Visual Identity",
+      "Verbal Identity",
+      "Brand Guidelines",
+      "Brand Architecture",
+      "Brand Experiences",
+    ],
   },
   {
     stage: 2,
-    ellipseTop: 350,
-    ellipseHeight: 200,
+    title: "Digital Marketing",
+    tagline: "Reach More. Sell More. Be Everywhere.",
     activities: [
-      'Content Marketing', 'Advertising', 'Email Marketing', 'Blogging',
-      'Case Studies', 'Marketing Automation', 'Events', 'Webinars'
-    ]
+      "SEO & SEM",
+      "Meta & Google Ads",
+      "Email Marketing",
+      "Social Strategy",
+      "Funnel Optimization",
+      "Analytics & Reporting",
+    ],
   },
   {
     stage: 3,
-    ellipseTop: 600,
-    ellipseHeight: 200,
+    title: "Website Design",
+    tagline: "Design That Does More Than Look Good.",
     activities: [
-      'Demos', 'Sales Collateral', 'Customer Testimonials', 'Case Studies'
-    ]
+      "Responsive Design",
+      "UI/UX Strategy",
+      "Conversion Optimization",
+      "Interactive Experiences",
+      "CMS Setup",
+      "Performance Tuning",
+    ],
   },
   {
     stage: 4,
-    ellipseTop: 850,
-    ellipseHeight: 200,
+    title: "Development",
+    tagline: "Code That Powers Growth.",
     activities: [
-      'Product Tutorials', 'Help Guides', 'Brand Products', 'Content Marketing'
-    ]
-  }
+      "Tech Consulting",
+      "API Integration",
+      "Frontend/Backend Dev",
+      "Mobile App Dev",
+      "AI/AR/VR",
+      "Web3 & Blockchain",
+    ],
+  },
 ];
 
 const FunnelContainer = () => {
   return (
-    <div className="relative w-full min-h-screen flex flex-col items-center justify-center bg-gray-100 overflow-hidden">
-      {/* Background Ellipses */}
-      <FunnelEllipses />
-
-      {/* Interactive Stages Layered On Top */}
-      <div className="absolute inset-0 w-full h-full"> {/* This div acts as the positioning context for absolute stages */}
-        {funnelData.map((data) => (
-          <FunnelStageInteractive
-            key={data.stage}
-            stageNumber={data.stage}
-            activities={data.activities}
-            ellipseTop={data.ellipseTop}
-            ellipseHeight={data.ellipseHeight}
-          />
-        ))}
-      </div>
+    <div className="w-full bg-gray-50 py-20 flex flex-col items-center gap-16">
+      {funnelData.map((data) => (
+        <FunnelStageInteractive
+          key={data.stage}
+          stageNumber={data.stage}
+          title={data.title}
+          tagline={data.tagline}
+          activities={data.activities}
+        />
+      ))}
     </div>
   );
 };
-
-export default FunnelContainer;

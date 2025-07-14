@@ -70,7 +70,7 @@ const Work = () => {
         </div>
 
         {/* See More Work Link */}
-        <div className="text-center mt-20 mb-10">
+        {/* <div className="text-center mt-20 mb-10">
           <Link // Use Link here as well
             to="/work" // Destination path
             className="relative inline-block text-2xl sm:text-3xl font-medium text-gray-900 py-2 px-4 group focus:outline-none"
@@ -78,7 +78,7 @@ const Work = () => {
             <span className="relative z-10 font-inter">See more work</span>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-gray-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
