@@ -58,7 +58,7 @@ const funnelData = [
 
 const FunnelContainer = () => {
   return (
-    <div className="w-full bg-gray-50 py-20 flex flex-col items-center gap-16">
+    <div className="w-full bg-gray-50 py-20 flex flex-col items-center gap-16 font-sans"> {/* Added font-sans for Inter */}
       {funnelData.map((data) => (
         <FunnelStageInteractive
           key={data.stage}

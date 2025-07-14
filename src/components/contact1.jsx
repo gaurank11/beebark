@@ -141,7 +141,7 @@ const Contact1 = () => {
         {/* Full-width image */}
         <div className="w-full h-80 lg:h-[600px] overflow-hidden mb-8">
           <img
-            src="/coworking1.webp" // Reusing this image as a general office/team shot
+            src="/delhi co2.webp" // Reusing this image as a general office/team shot
             alt="Beebark team collaborating in the office"
             className="w-full h-full object-cover rounded-lg shadow-lg"
             onError={(e) => {
@@ -155,7 +155,7 @@ const Contact1 = () => {
         <div className="flex flex-col lg:flex-row lg:space-x-8">
           <div className="w-full lg:w-1/2 h-64 lg:h-96 overflow-hidden mb-8 lg:mb-0">
             <img
-              src="/coworking2.webp" // Using the image with the dog and legs
+              src="/Delhi co 4.webp" // Using the image with the dog and legs
               alt="A dog resting near a window at Beebark office"
               className="w-full h-full object-cover rounded-lg shadow-lg"
               onError={(e) => {
