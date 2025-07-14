@@ -71,3 +71,5 @@ const FunnelContainer = () => {
     </div>
   );
 };
+
+export default FunnelContainer;

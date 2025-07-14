@@ -10,6 +10,7 @@ import M_Services from '../components/m_services';
 import AutoScrollPortfolio from '../components/Portfolio_auto';
 import Work from '../components/work';
 import FunnelContainer from '../components/FunnelContainer';
+import Service1 from '../components/services1';
 
 
 const Home = () => {
@@ -18,7 +19,8 @@ const Home = () => {
       <HeroSection />
       <AboutUs />
       <Work />
-                <FunnelContainer/>
+      <Service1 />
+        <FunnelContainer/>
   
      
        {/* <Services /> */}
