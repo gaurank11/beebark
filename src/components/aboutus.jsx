@@ -22,7 +22,7 @@ const AboutUs = () => {
             </h2>
             <p className="text-2xl text-gray-100 mb-6 text-left font-inter">
               At <span className="font-bold text-yellow-300">BeeBark</span>,
-            we don’t just build websites or run ads—we build brands that refuse to be ignored.
+            we don’t just build websites or run ads. we build brands that refuse to be ignored.
            No noise. No fluff. Just pure, unapologetic execution.
           If you're here to play it safe, we're not for you.
            But if you're here to make noise, break rules, and own your space
@@ -63,7 +63,7 @@ const AboutUs = () => {
        Real Solutions for Real Brands. Built to Lead. Built to Win.
           </h2>
           <p className="text-base mb-6 font-inter">
-            At <span className="font-bold">BeeBark</span>, we don’t just build websites or run ads—we build brands that refuse to be ignored. No noise. No fluff. Just pure, unapologetic execution. If you're here to play it safe, we're not for you.
+            At <span className="font-bold">BeeBark</span>, we don’t just build websites or run ads. we build brands that refuse to be ignored. No noise. No fluff. Just pure, unapologetic execution. If you're here to play it safe, we're not for you.
            But if you're here to make noise, break rules, and own your space.
           </p>
           <button onClick={() => navigateTo('/about')} className="px-6 py-3 text-[#221912] font-medium bg-white rounded border-2 border-white hover:text-white font-inter">
