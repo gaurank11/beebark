@@ -19,7 +19,7 @@ const AboutPage = () => {
             About Beebark
           </h1>
           <p className="text-xl md:text-2xl leading-relaxed text-[#555555] mb-4">
-            We’re a growing community for architects, designers, realtors & builders to showcase work, network, and grow.
+            We’re a growing community for Architects, Designers, Realtors & Builders to showcase work, network, and grow.
           </p>
           <p className="text-xl md:text-2xl leading-relaxed text-[#555555]">
             More than a platform — it’s where your projects meet new opportunities.

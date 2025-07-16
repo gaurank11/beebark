@@ -63,14 +63,19 @@ const WorkPage = () => {
             SEE OUR WORK
           </button>
         </div>
-        <div className="md:w-1/2 flex justify-center items-center bg-yellow-300 mt-8 md:mt-0"> {/* Image box without internal padding */}
+        <div className="md:w-1/2 flex justify-center items-center bg-black mt-8 md:mt-0"> {/* Image box without internal padding */}
           {/* Placeholder for Trizzone image. Replace 'https://placehold.co/600x400/FFD700/000000?text=Trizzone+Image' with your actual image URL */}
-          <img
-            src="/trizzone.jpeg"
-            alt="Trizzone"
-            className="w-full h-full object-fit" // Ensure image fills and maintains aspect ratio
-            onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/600x400/CCCCCC/000000?text=Image+Error'; }}
-          />
+          <video
+    className="w-full max-w-4xl rounded-xl shadow-2xl"
+    autoPlay
+    loop
+    muted
+    playsInline
+    controls={false} // Remove if you want to allow play/pause
+  >
+    <source src="/trizzone/Animation.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
         </div>
       </section>
 
