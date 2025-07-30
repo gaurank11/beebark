@@ -44,7 +44,7 @@ export default function Header() {
   // Function to get classes for NavLink based on active state
   const getNavLinkClasses = (isActive) =>
     `hover:text-gray-700 transition duration-300 ease-in-out pb-1.5 ${
-      isActive ? "border-b-2 border-yellow-500" : ""
+      isActive ? "border-b-2 border-[#FF0000]" : ""
     }`;
 
   return (
