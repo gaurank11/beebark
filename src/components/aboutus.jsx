@@ -34,7 +34,7 @@ const AboutUs = () => {
         </div>
 
         {/* Right Grid - Logo */}
-        <div className="bg-yellow-400 flex items-center justify-center">
+        <div className="bg-[#FF0000] flex items-center justify-center">
           <div className="bg-white p-6 rounded-full shadow-lg">
             <img
               src={logo}
@@ -46,7 +46,7 @@ const AboutUs = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="md:hidden bg-yellow-400 flex flex-col justify-between min-h-screen p-6">
+      <div className="md:hidden bg-[#FF0000] flex flex-col justify-between min-h-screen p-6">
         {/* Logo Section */}
         <div className="flex flex-grow items-center justify-center">
           <div className="bg-white p-6 rounded-full shadow-lg">
