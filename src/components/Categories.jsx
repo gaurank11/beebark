@@ -116,7 +116,7 @@ export function Categories() {
           <h2 className="text-xl md:text-3xl font-bold text-gray-900">Explore Web Designs</h2>
           <button
             onClick={() => (window.location.href = '/categories')}
-            className="text-yellow-400 text-sm font-semibold hover:underline"
+            className="text-[#FF0000] text-sm font-semibold hover:underline"
           >
             See All
           </button>
