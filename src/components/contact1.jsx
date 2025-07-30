@@ -56,34 +56,34 @@ const Contact1 = () => {
             {/* Email */}
             <div className="flex items-start">
               <div className="flex-shrink-0 mr-4">
-                <Mail className="w-6 h-6 text-yellow-400" />
+                <Mail className="w-6 h-6 text-[#FF0000]" />
               </div>
               <div>
                 <p className="text-gray-300 text-sm">Shoot us an Email</p>
-                <a href="mailto:info@thebeebark.com" className="text-yellow-400 text-lg font-medium hover:underline">info@thebeebark.com</a>
+                <a href="mailto:info@thebeebark.com" className="text-[#FF0000] text-lg font-medium hover:underline">info@thebeebark.com</a>
               </div>
             </div>
 
             {/* Phone */}
             <div className="flex items-start">
               <div className="flex-shrink-0 mr-4">
-                  <Phone className="w-6 h-6 text-yellow-400" />
+                  <Phone className="w-6 h-6 text-[#FF0000]" />
               </div>
               <div>
                 <p className="text-gray-300 text-sm">Give us a Call</p>
-                <a href="tel:+917701858312" className="text-yellow-400 text-lg font-medium hover:underline">+91 7701858312</a>
+                <a href="tel:+917701858312" className="text-[#FF0000] text-lg font-medium hover:underline">+91 7701858312</a>
               </div>
             </div>
 
             {/* Address */}
             <div className="flex items-start">
               <div className="flex-shrink-0 mr-4">
-                <MapPin className="w-6 h-6 text-yellow-400" />
+                <MapPin className="w-6 h-6 text-[#FF0000]" />
 
               </div>
               <div>
                 <p className="text-gray-300 text-sm">Visit our Delhi Office</p>
-                <p className="text-yellow-400 text-lg font-medium">125, Second Floor, 125, Shahpur Jat, Siri Fort, New Delhi, Delhi 110049</p>
+                <p className="text-[#FF0000] text-lg font-medium">125, Second Floor, 125, Shahpur Jat, Siri Fort, New Delhi, Delhi 110049</p>
               </div>
             </div>
           </div>
