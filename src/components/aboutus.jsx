@@ -21,13 +21,13 @@ const AboutUs = () => {
              Real Solutions for Real Brands. Built to Lead. Built to Win.
             </h2>
             <p className="text-2xl text-gray-100 mb-6 text-left font-inter">
-              At <span className="font-bold text-yellow-300">BeeBark</span>,
+              At <span className="font-bold text-[#FF0000]">BeeBark</span>,
             we don’t just build websites or run ads. we build brands that refuse to be ignored.
            No noise. No fluff. Just pure, unapologetic execution.
           If you're here to play it safe, we're not for you.
            But if you're here to make noise, break rules, and own your space
             </p>
-            <button onClick={() => navigateTo('/about')}className="px-6 py-3 text-yellow-300 font-medium border-2 border-yellow-300 rounded hover:bg-yellow-300 hover:text-white font-inter">
+            <button onClick={() => navigateTo('/about')}className="px-6 py-3 text-[#FF0000] font-medium border-2 border-[#FF0000] rounded hover:bg-[#FF0000] hover:text-white font-inter">
               Company
             </button>
           </div>
