@@ -15,17 +15,17 @@ const Services = () => {
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Cube */}
         <FloatingShape className="top-[12%] left-[6%] w-[22rem] h-[22rem] animate-cube">
-          <div className="w-full h-full bg-[#FF0000] shadow-2xl transform rotate-45"></div>
+          <div className="w-full h-full bg-red-50 shadow-2xl transform rotate-45"></div>
         </FloatingShape>
 
         {/* Square Pyramid */}
         <FloatingShape className="bottom-[15%] right-[8%] w-[22rem] h-[22rem] animate-pyramid">
-          <div className="w-0 h-0 border-l-[240px] border-r-[240px] border-b-[400px] border-l-transparent border-r-transparent border-b-[#FF0000] opacity-80"></div>
+          <div className="w-0 h-0 border-l-[240px] border-r-[240px] border-b-[400px] border-l-transparent border-r-transparent border-b-red-50 opacity-80"></div>
         </FloatingShape>
 
         {/* Cone */}
         <FloatingShape className="top-[45%] left-[40%] w-[22rem] h-[22rem] animate-cone">
-          <div className="w-0 h-0 border-l-[200px] border-r-[200px] border-b-[400px] border-l-transparent border-r-transparent border-b-[#FF0000] rounded-b-full opacity-70"></div>
+          <div className="w-0 h-0 border-l-[200px] border-r-[200px] border-b-[400px] border-l-transparent border-r-transparent border-b-red-50 rounded-b-full opacity-70"></div>
         </FloatingShape>
 
         {/* Ring (Donut) */}
