@@ -14,14 +14,14 @@ const FunnelStageInteractive = ({ stageNumber, title, tagline, activities }) => 
       <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 mb-6 w-full max-w-6xl">
         {/* Stage Number */}
         <div className="text-center md:text-right md:pr-4 w-full md:w-48">
-          <div className="text-yellow-400 text-4xl md:text-5xl font-bold">
+          <div className="text-[#FF0000] text-4xl md:text-5xl font-bold">
             {String(stageNumber).padStart(2, '0')}
           </div>
         </div>
 
         {/* Interactive Ring Container */}
         <motion.div
-          className="relative flex-1 w-full flex items-center justify-center p-4 rounded-full border border-yellow-400 transition-all duration-300 overflow-hidden"
+          className="relative flex-1 w-full flex items-center justify-center p-4 rounded-full border border-[#FF0000] transition-all duration-300 overflow-hidden"
           // Animate scale and padding to create the expansion effect.
           // minHeight is set to 'auto' when hovered to allow content to dictate height.
           animate={{
@@ -42,7 +42,7 @@ const FunnelStageInteractive = ({ stageNumber, title, tagline, activities }) => 
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }} // Faster transition for content fade
               >
-                <div className="text-yellow-500 font-semibold text-xl md:text-2xl">{title}</div>
+                <div className="text-[[#FF0000]] font-semibold text-xl md:text-2xl">{title}</div>
                 <div className="text-sm md:text-xl text-gray-700 mt-1">{tagline}</div>
               </motion.div>
             )}
