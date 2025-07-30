@@ -18,7 +18,7 @@ const WorkPage = () => {
         <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90">
           No noise. No fluff. Just pure, unapologetic execution. If you're here to play it safe, we're not for you. But if you're here to make noise, break rules, and own your space—
         </p>
-        <button onClick={() => navigateTo('/contact')} className="bg-yellow-400 hover:bg-yellow-500 text-[#221912] font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
+        <button onClick={() => navigateTo('/contact')} className="bg-[#FF0000] hover:bg-[#FF0000] text-[#221912] font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
           WORK WITH US
         </button>
       </section>
