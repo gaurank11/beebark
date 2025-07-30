@@ -93,14 +93,14 @@ const AutoScrollPortfolio = () => {
       <div className="flex justify-between items-center mb-6">
         <button
           onClick={prevGroup}
-          className="text-yellow-400 font-bold text-2xl"
+          className="text-[#FF0000] font-bold text-2xl"
         >
           ←
         </button>
         <h1 className="text-2xl font-semibold">{activeGroup.name}</h1>
         <button
           onClick={nextGroup}
-          className="text-yellow-400 font-bold text-2xl"
+          className="text-[#FF0000] font-bold text-2xl"
         >
           →
         </button>
@@ -132,7 +132,7 @@ const AutoScrollPortfolio = () => {
             </ul>
           ) : null}
 
-          <button className="mt-6 bg-yellow-400 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-300">
+          <button className="mt-6 bg-[#FF0000] text-black px-6 py-2 rounded font-semibold hover:bg-yellow-300">
             LEARN MORE
           </button>
         </motion.div>
@@ -149,7 +149,7 @@ const AutoScrollPortfolio = () => {
                 src={item.img}
                 alt={item.title}
                 className={`w-full h-[200px] object-cover rounded-lg transition-all duration-500 ${
-                  i === activeIndex ? "ring-4 ring-yellow-400" : "grayscale"
+                  i === activeIndex ? "ring-4 ring-[#FF0000]" : "grayscale"
                 }`}
               />
             ))}
