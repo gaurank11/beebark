@@ -41,7 +41,7 @@ const AboutPage = () => {
       <section className="container mx-auto px-6 pb-20 md:pb-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
           <div className="md:col-span-3">
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-yellow-500 mb-4 md:mb-0">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-[#FF0000] mb-4 md:mb-0">
               What We Do
             </h3>
           </div>
@@ -59,7 +59,7 @@ const AboutPage = () => {
             </div>
             <a
               href="#" // Link to your dedicated services page
-              className="mt-10 inline-flex items-center text-lg font-semibold text-yellow-500 hover:text-yellow-600 transition-colors duration-300"
+              className="mt-10 inline-flex items-center text-lg font-semibold text-[#FF0000] hover:text-yellow-600 transition-colors duration-300"
             >
               <svg
                 className="w-6 h-6 mr-2"
@@ -105,7 +105,7 @@ const AboutPage = () => {
 
       {/* Core Values Section */}
    <section className="container mx-auto px-6 py-20 md:py-32">
-  <h2 className="text-4xl md:text-6xl font-inter leading-tight mb-16 text-center text-yellow-400">
+  <h2 className="text-4xl md:text-6xl font-inter leading-tight mb-16 text-center text-[#FF0000]">
     Our Core Values
   </h2>
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
@@ -149,7 +149,7 @@ const AboutPage = () => {
 
     ].map((value, index) => (
       <div key={index}>
-        <h3 className="text-4xl md:text-5xl font-inter text-yellow-400 mb-4">{value.number}</h3>
+        <h3 className="text-4xl md:text-5xl font-inter text-[#FF0000] mb-4">{value.number}</h3>
         <h4 className="text-xl md:text-2xl font-semibold mb-4 text-[#333333]">{value.title}</h4>
         <p className="text-base md:text-lg leading-relaxed text-[#555555]">{value.description}</p>
       </div>
@@ -160,7 +160,7 @@ const AboutPage = () => {
   <div className="mt-16 text-center">
     <Link
       to="/manifesto"
-      className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
+      className="inline-block bg-[#FF0000] hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
     >
       Read the Full Manifesto
     </Link>
