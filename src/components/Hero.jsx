@@ -29,7 +29,7 @@ export default function HeroSection() {
           <span className="relative inline-block">
             Brand
             <span
-              className={`absolute bottom-0 left-0 w-full h-1 bg-yellow-500 transition-all duration-500 ease-out transform ${
+              className={`absolute bottom-0 left-0 w-full h-1 bg-[#FF0000] transition-all duration-500 ease-out transform ${
                 underlineVisible ? "scale-x-100" : "scale-x-0"
               }`}
             ></span>
@@ -45,7 +45,7 @@ export default function HeroSection() {
         {/* Learn More Link */}
         <Link
           to="/services"
-          className="inline-flex items-center text-[#221912] hover:text-yellow-400 font-semibold text-lg transition duration-300 ease-in-out group"
+          className="inline-flex items-center text-[#221912] hover:text-[#FF0000] font-semibold text-lg transition duration-300 ease-in-out group"
         >
           <span className="mr-2">LEARN ABOUT OUR BRAND PROCESS</span>
           {/* Arrow Icon (SVG) */}
