@@ -54,7 +54,7 @@ export default function Header() {
         <div className="flex items-center space-x-3">
           <Link to="/" onClick={() => setMenuOpen(false)} className="flex items-center">
             {/* Using a placeholder image URL for the logo */}
-            <img src="/bbark.png" alt="BeeBark Logo" className="h-12 w-auto rounded-full" />
+            <img src="/Agency logo-Photoroom.png" alt="BeeBark Logo" className="h-12 w-auto rounded-full" />
             <span className="text-2xl font-bold text-black ml-2">BeeBark</span>
           </Link>
         </div>
