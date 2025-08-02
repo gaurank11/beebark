@@ -15,13 +15,13 @@ const AboutPage = () => {
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-20 md:py-32 pt-10 mt-10">
         <div className="max-w-7xl mx-auto text-center md:text-left">
-          <h1 className="text-5xl md:text-7xl font-inter font-bold leading-tight mb-6 text-[#333333]">
+          <h1 className="text-5xl md:text-7xl font-inter font-bold leading-tight mb-6 text-black">
             About Beebark
           </h1>
-          <p className="text-xl md:text-2xl leading-relaxed text-[#555555] mb-4">
+          <p className="text-xl md:text-2xl leading-relaxed text-black mb-4">
             We’re a growing community for Architects, Designers, Realtors & Builders to showcase work, network, and grow.
           </p>
-          <p className="text-xl md:text-2xl leading-relaxed text-[#555555]">
+          <p className="text-xl md:text-2xl leading-relaxed text-black">
             More than a platform — it’s where your projects meet new opportunities.
           </p>
         </div>
@@ -160,7 +160,7 @@ const AboutPage = () => {
   <div className="mt-16 text-center">
     <Link
       to="/manifesto"
-      className="inline-block bg-[#FF0000] hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
+      className="inline-block bg-[#FF0000] hover:bg-red-500 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
     >
       Read the Full Manifesto
     </Link>
@@ -172,10 +172,10 @@ const AboutPage = () => {
   <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
     {/* Arjun's Quote */}
     <div>
-      <blockquote className="text-2xl md:text-4xl font-inter leading-tight text-[#6B5742] mb-6">
+      <blockquote className="text-2xl md:text-4xl font-inter leading-tight text-[#FF0000] mb-6">
         “More than a platform — it’s where your projects meet new opportunities.”
       </blockquote>
-      <p className="text-lg md:text-xl font-semibold uppercase tracking-wider text-[#333333]">
+      <p className="text-lg md:text-xl font-semibold uppercase tracking-wider text-[#FF0000]">
         Arjun, Co-founder
       </p>
     </div>
