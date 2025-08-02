@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-[#221912] text-white py-10 px-4 sm:px-6 lg:px-8 mt-auto font-sans antialiased">
+    <footer className="w-full bg-black text-white py-10 px-4 sm:px-6 lg:px-8 mt-auto font-sans antialiased">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-start text-center lg:text-left">
 
         {/* Left Column: Brand and Navigation */}
