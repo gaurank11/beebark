@@ -49,13 +49,11 @@ const AboutUs = () => {
       <div className="md:hidden bg-[#FF0000] flex flex-col justify-between min-h-screen p-6">
         {/* Logo Section */}
         <div className="flex flex-grow items-center justify-center">
-          <div className="bg-white p-6 rounded-full shadow-lg">
             <img
               src={logo}
               alt="TheBeeBark Logo"
               className="w-20 h-20 object-contain"
             />
-          </div>
         </div>
         {/* Text Section */}
         <div className="text-left text-white max-w-sm mt-auto">
