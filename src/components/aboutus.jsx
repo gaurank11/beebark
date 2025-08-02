@@ -50,7 +50,7 @@ const AboutUs = () => {
             <img
               src={logo}
               alt="TheBeeBark Logo"
-              className="w-20 h-20 object-contain"
+              className="w-36 h-36 object-contain"
             />
         </div>
         {/* Text Section */}
