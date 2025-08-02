@@ -66,13 +66,13 @@ const WorkPage = () => {
         <div className="md:w-1/2 flex justify-center items-center bg-black mt-8 md:mt-0"> {/* Image box without internal padding */}
           {/* Placeholder for Trizzone image. Replace 'https://placehold.co/600x400/FFD700/000000?text=Trizzone+Image' with your actual image URL */}
           <video
-    className="w-full max-w-4xl rounded-xl shadow-2xl"
-    autoPlay
-    loop
-    muted
-    playsInline
-    controls={false} // Remove if you want to allow play/pause
-  >
+         className="w-full max-w-4xl rounded-xl shadow-2xl"
+         autoPlay
+         loop
+         muted
+         playsInline
+         controls={false} // Remove if you want to allow play/pause
+         >
     <source src="/trizzone/Animation.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
@@ -80,10 +80,10 @@ const WorkPage = () => {
       </section>
 
       {/* Call to Action Section for TheBeeBark */}
-      <section className="bg-[#E2DED0]  text-center py-20 px-4">
+      <section className="bg-[#FF0000]  text-center py-20 px-4">
         <div className="border-t border-b border-gray-700 py-12 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-10 leading-tight text-black">Ready to make some noise?</h2>
-          <button onClick={() => navigateTo('/contact')} className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
+          <button onClick={() => navigateTo('/contact')} className="bg-black hover:bg-white text-white hover:text-black font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
             CONTACT US
           </button>
         </div>
