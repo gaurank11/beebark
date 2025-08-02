@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/bbark.png"
+import logo from "/Agency logo-Photoroom.png"
 import { useNavigate } from 'react-router-dom'; 
 
 const AboutUs = () => {
@@ -35,14 +35,12 @@ const AboutUs = () => {
 
         {/* Right Grid - Logo */}
         <div className="bg-[#FF0000] flex items-center justify-center">
-          <div className="bg-white p-6 rounded-full shadow-lg">
             <img
               src={logo}
               alt="TheBeeBark Logo"
               className="w-40 h-40 object-contain"
             />
           </div>
-        </div>
       </div>
 
       {/* Mobile View */}
