@@ -193,9 +193,9 @@ const AboutPage = () => {
 </section>
 
       {/* Placeholder for a potential CTA / Footer section */}
-      <section className="bg-[#E2DED0] py-16 text-center text-[#333333]">
+      <section className="bg-[#FF0000] py-16 text-center text-black">
         <h2 className="text-3xl md:text-4xl font-inter mb-6">Join the Beebark Community Today!</h2>
-        <button className="bg-[#6B5742] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#333333] transition-colors duration-300">
+        <button className="bg-black text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition-colors duration-300">
           Get Started
         </button>
       </section>
