@@ -15,7 +15,7 @@ const AboutUs = () => {
       {/* Desktop and Laptop View */}
       <div className="hidden md:grid md:grid-cols-2 min-h-screen">
         {/* Left Grid - Content */}
-        <div className="bg-[#221912] flex flex-col justify-center items-center p-8">
+        <div className="bg-black flex flex-col justify-center items-center p-8">
           <div className="max-w-md text-left">
             <h2 className="text-5xl font-bold mb-4 text-white font-sans">
              Real Solutions for Real Brands. Built to Lead. Built to Win.
@@ -62,7 +62,7 @@ const AboutUs = () => {
             At <span className="font-bold">BeeBark</span>, we don’t just build websites or run ads. we build brands that refuse to be ignored. No noise. No fluff. Just pure, unapologetic execution. If you're here to play it safe, we're not for you.
            But if you're here to make noise, break rules, and own your space.
           </p>
-          <button onClick={() => navigateTo('/about')} className="px-6 py-3 text-[#221912] font-medium bg-white rounded border-2 border-white hover:text-white font-inter">
+          <button onClick={() => navigateTo('/about')} className="px-6 py-3 text-black font-medium bg-white rounded border-2 border-white hover:text-white font-inter">
             Company
           </button>
         </div>
