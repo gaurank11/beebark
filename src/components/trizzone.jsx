@@ -42,7 +42,7 @@ const WorkItem = ({ title, description, imageUrl, imageAlt, link, isReversed, de
   const imageColumnWidth = 'md:w-3/5 lg:w-7/12'; // Slightly more than half
 
   return (
-    <section className={`py-16 md:py-24 px-4 ${isReversed ? 'bg-[#221912] text-white' : 'bg-white text-zinc-900'}`}>
+    <section className={`py-16 md:py-24 px-4 ${isReversed ? 'bg-black text-white' : 'bg-white text-zinc-900'}`}>
       <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 md:gap-16 lg:gap-20 md:flex-row">
         <div className={`${imageColumnWidth} ${imageContainerClasses} ${isReversed ? 'md:order-2' : 'md:order-1'}`}>
           {children ? children : (
@@ -235,7 +235,7 @@ function Trizzone() {
 
     
           {/* --- Section: Our Approach to Property Detail Pages (Common Text) --- */}
-        <section className="py-16 md:py-24 px-4 bg-[#221912] text-white">
+        <section className="py-16 md:py-24 px-4 bg-black text-white">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6">Focus on clarity, elegance, and distinct service areas</h2>
             <p className="text-lg sm:text-xl leading-relaxed text-zinc-200">
@@ -245,7 +245,7 @@ function Trizzone() {
         </section>
 
         {/* --- Section: Call to Action / Final LP Section --- */}
-        <section className="py-20 bg-yellow-400 text-white text-center px-4">
+        <section className="py-20 bg-[#FF0000] text-white text-center px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6">Ready to Transform Your Online Presence?</h2>
             <p className="text-lg sm:text-xl mb-8 opacity-90">
@@ -253,7 +253,7 @@ function Trizzone() {
             </p>
             <Link
               to="/contact"
-              className="inline-block px-10 py-4 bg-white text-[#221912] font-bold rounded-full text-lg shadow-lg hover:bg-gray-100 transition duration-300"
+              className="inline-block px-10 py-4 bg-white text-black font-bold rounded-full text-lg shadow-lg hover:bg-gray-100 transition duration-300"
             >
               Start Your Project
             </Link>
