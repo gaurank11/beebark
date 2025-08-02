@@ -50,7 +50,7 @@ export default function Header() {
   return (
     <>
       {/* Header Section */}
-      <header className="fixed top-0 left-0 w-full p-5 flex justify-between items-center z-50 bg-[#221912] shadow-md rounded-b-lg">
+      <header className="fixed top-0 left-0 w-full p-5 flex justify-between items-center z-50 bg-[#FF0000] shadow-md rounded-b-lg">
         <div className="flex items-center space-x-3">
           <Link to="/" onClick={() => setMenuOpen(false)} className="flex items-center">
             {/* Using a placeholder image URL for the logo */}
