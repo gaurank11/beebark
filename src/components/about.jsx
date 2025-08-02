@@ -59,7 +59,7 @@ const AboutPage = () => {
             </div>
             <a
               href="#" // Link to your dedicated services page
-              className="mt-10 inline-flex items-center text-lg font-semibold text-[#FF0000] hover:text-yellow-600 transition-colors duration-300"
+              className="mt-10 inline-flex items-center text-lg font-semibold text-[#FF0000] hover:text-red-500 transition-colors duration-300"
             >
               <svg
                 className="w-6 h-6 mr-2"
@@ -175,17 +175,17 @@ const AboutPage = () => {
       <blockquote className="text-2xl md:text-4xl font-inter leading-tight text-[#FF0000] mb-6">
         “More than a platform — it’s where your projects meet new opportunities.”
       </blockquote>
-      <p className="text-lg md:text-xl font-semibold uppercase tracking-wider text-[#FF0000]">
+      <p className="text-lg md:text-xl font-semibold uppercase tracking-wider text-black">
         Arjun, Co-founder
       </p>
     </div>
 
     {/* Aman's Quote */}
     <div>
-      <blockquote className="text-2xl md:text-4xl font-inter leading-tight text-[#6B5742] mb-6">
+      <blockquote className="text-2xl md:text-4xl font-inter leading-tight text-[#FF0000] mb-6">
         “At Beebark, we don’t just build — we empower creators to lead with purpose and passion.”
       </blockquote>
-      <p className="text-lg md:text-xl font-semibold uppercase tracking-wider text-[#333333]">
+      <p className="text-lg md:text-xl font-semibold uppercase tracking-wider text-black">
         Aman, Co-founder
       </p>
     </div>
